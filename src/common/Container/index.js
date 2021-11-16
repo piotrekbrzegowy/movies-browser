@@ -1,9 +1,9 @@
-import { container }from "./styled"
+import { Wrapper }from "./styled"
 
 const Container = ({ children }) => (
-    <container>
+    <Wrapper>
         {children}
-    </container>
+    </Wrapper>
 );
 
 export default Container
