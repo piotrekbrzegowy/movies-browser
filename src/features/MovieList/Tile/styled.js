@@ -73,3 +73,15 @@ export const Votes = styled.div`
     font-size: 16px;
     color: #7E839A;
 `;
+
+export const HeaderWrapper = styled.div`
+    max-width: 1368px;
+    margin: auto;
+`;
+
+export const PageHeader = styled.h1`
+    font-weight: 600;
+    font-size: 36px;
+    color: #18181B;
+    margin: 56px 0 24px 0;
+`;
