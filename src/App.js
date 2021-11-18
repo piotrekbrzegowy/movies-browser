@@ -1,16 +1,9 @@
-import Container from "./common/Container";
-import { Header } from "./common/Header";
-import { MovieList } from "./features/MovieList";
+import { MovieList } from "./features/MovieList/";
 
 function App() {
-  return (
-    <>
-    <Container>
-    <Header>lalala</Header>
+  return <div className="App">
     <MovieList></MovieList>
-    </Container>
-    nanana</>
-  );
+  </div>;
 }
 
 export default App;
