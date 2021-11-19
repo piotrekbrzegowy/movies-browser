@@ -5,7 +5,6 @@ import {
     Search,
     SearchWrapper,
     PageTittle,
-    TittlePicture,
     Menu,
     MenuItem,
     SearchIcon,
@@ -18,9 +17,9 @@ export const Header = () => {
         <Wrapper>
             <StyledHeader>
                 <TittleWrapper>
-                    <TittlePicture>
+
                         <img src='https://i.postimg.cc/pdVjVLc2/Video.png' alt="camera picture" />
-                    </TittlePicture>
+                 
                     <PageTittle>Movies Browser</PageTittle>
                 </TittleWrapper>
                 <Menu>
