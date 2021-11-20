@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const RatingsWrapper = styled.div`
+export const RatingWrapper = styled.div`
     display: flex;
     align-items: flex-end;
     gap: 12px;
