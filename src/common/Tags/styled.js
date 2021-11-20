@@ -11,7 +11,7 @@ export const TagList = styled.ul`
 
 export const Tag = styled.li`
     font-size: 14px;
-    background-color: #E4E6F0;
+    background-color: ${({theme}) => theme.color.mystic};
     padding: 8px 16px;
     border-radius: 5px;
 `;

@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import { theme } from "../../../theme";
 
 export const Wrapper = styled.article`
     width: 324px;
     min-height: 650px;
-    background-color: #FFF;
+    background-color: ${({theme}) => theme.color.white};
     box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
     border-radius: 5px;
     padding: 16px;
@@ -33,10 +34,10 @@ export const DetailsWrapper = styled.div`
 export const Title = styled.header`
     font-weight: 500;
     font-size: 22px;
-    color: #18181B;
+    color: ${({theme}) => theme.color.woodsmoke};
 `;
 
 export const Subtitle = styled.div`
     font-size: 16px;
-    color: #7E839A;
+    color: ${({theme}) => theme.color.waterloo};
 `;

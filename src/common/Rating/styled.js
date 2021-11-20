@@ -9,10 +9,10 @@ export const RatingWrapper = styled.div`
 export const Rate = styled.div`
     font-weight: 600;
     font-size: 16px;
-    color: #18181B;
+    color: ${({theme}) => theme.color.woodsmoke};
 `;
 
 export const Votes = styled.div`
     font-size: 16px;
-    color: #7E839A;
+    color: ${({theme}) => theme.color.waterloo};
 `;
