@@ -11,6 +11,8 @@ export const StyledHeader = styled.header`
     justify-content: center;
     align-items: center;
     max-width: 1368px;
+    background-color: #18181B;
+    height: 94px;
 `;
 
 export const TittleWrapper = styled.div`
@@ -27,12 +29,6 @@ export const PageTittle = styled.h1`
     color: #FFFFFF;
     padding-left: 16px;
     text-transform: capitalize;
-`;
-
-export const SearchWrapper = styled.div`
-    height: 48px;
-    width: 432px;
-    margin-left: auto;
 `;
 
 export const Search = styled.div`
@@ -59,28 +55,24 @@ export const MenuItem = styled.li`
     padding: 0 32px;
 
     font-style: normal;
-font-weight: 600;
-font-size: 14px;
-line-height: 21px;
-text-transform: uppercase;
-`;
-
-export const SearchIcon = styled.div`
-
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: uppercase;
 `;
 
 export const Img = styled.img`
-margin: 0px 16px 0px 24px;
+    margin: 0px 16px 0px 24px;
     width: 24px;
     height: 24px;
 `;
 export const Input = styled.input`
     color: #7E839A;
     height: 24px;
-width: 155px;
-border: none;
+    width: 155px;
+    border: none;
 
 &:focus-visible {
     outline: none;
-}
+};
 `;
