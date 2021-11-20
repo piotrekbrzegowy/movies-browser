@@ -1,10 +1,10 @@
-import { RatingWrapper, Rate, Votes } from "./styled";
-import { ReactComponent as StarIcon } from "./icons/star.svg";
+import { RatingWrapper, Rate, Votes, StarIcon } from "./styled";
+import star from "./icons/star.svg";
 
 export function Rating({ rate, votes }) {
     return (
         <RatingWrapper>
-            <StarIcon />
+            <StarIcon src={star} />
             <Rate>{rate}</Rate>
             <Votes>{votes} votes</Votes>
         </RatingWrapper>

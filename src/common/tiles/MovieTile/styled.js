@@ -1,20 +1,31 @@
 import styled from "styled-components";
-import { theme } from "../../../theme";
 
 export const Wrapper = styled.article`
     width: 324px;
     min-height: 650px;
-    background-color: ${({theme}) => theme.color.white};
+    background-color: ${({ theme }) => theme.color.white};
     box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
     border-radius: 5px;
     padding: 16px;
     display: flex;
     flex-direction: column;
+
+    @media(max-width:${({ theme }) => theme.breakpoint.mobileMax}){
+        flex-direction: row;
+        width: 100%;
+        margin: 0 16px 0 16px;
+        min-height: 201px;
+    };
 `;
 
 export const Image = styled.img`
     max-width: 292px;
     max-height: 434px;
+
+    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}){
+        max-width: 114px;
+        max-height: 169px;
+    }
 `;
 
 export const Content = styled.div`
@@ -23,6 +34,11 @@ export const Content = styled.div`
     justify-content: space-between;
     flex-grow: 1;
     margin-top: 16px;
+
+    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}){
+        flex-direction: column;
+        margin: 0 0 0 16px;
+    };
 `;
 
 export const DetailsWrapper = styled.div`
@@ -34,10 +50,18 @@ export const DetailsWrapper = styled.div`
 export const Title = styled.header`
     font-weight: 500;
     font-size: 22px;
-    color: ${({theme}) => theme.color.woodsmoke};
+    color: ${({ theme }) => theme.color.woodsmoke};
+
+    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}){
+        font-size: 16px;
+    };
 `;
 
 export const Subtitle = styled.div`
     font-size: 16px;
-    color: ${({theme}) => theme.color.waterloo};
+    color: ${({ theme }) => theme.color.waterloo};
+
+    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}){
+        font-size: 13px;
+    };
 `;

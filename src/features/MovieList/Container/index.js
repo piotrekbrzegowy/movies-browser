@@ -7,4 +7,8 @@ export const Container = styled.div`
     flex-wrap: wrap;
     gap: 24px;
     justify-content: center;
+
+    @media(max-width: ${({theme}) => theme.breakpoint.mobileMax}){
+        gap: 16px;
+    };
 `;
