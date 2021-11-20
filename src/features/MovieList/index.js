@@ -1,14 +1,19 @@
 import { Container } from "./Container";
-import { Tile } from "./Tile";
-import { HeaderWrapper, PageHeader } from "./Tile/styled";
+import { MovieTile } from "../../common/tiles/MovieTile"
 
 export function MovieList() {
     return (
         <>
-        <HeaderWrapper><PageHeader>Popular movies</PageHeader></HeaderWrapper>
-        <Container>
-            <Tile/><Tile/><Tile/><Tile/><Tile/><Tile/><Tile/><Tile/>
-        </Container>
+            <Container>
+                <MovieTile title="Mulan long title long titleMulan long title long" subtitle="2020" tags={["Action", "Drama", "Adventure"]} rate="7,9" votes="39" />
+                <MovieTile title="Mulan long title long title Mulan long title long" subtitle="2020" tags={["Action", "Drama"]} rate="7,9" votes="39" />
+                <MovieTile title="Mulan" subtitle="2020" tags={["Action"]} rate="9" votes="15" />
+                <MovieTile title="Mulan" subtitle="2020" tags={["Action", "Drama", "Adventure"]} rate="7,9" votes="39" />
+                <MovieTile title="Mulan" subtitle="2020" tags={["Action", "Drama", "Adventure"]} rate="7,9" votes="39" />
+                <MovieTile title="Mulan" subtitle="2020" tags={["Action", "Drama", "Adventure"]} rate="7,9" votes="39" />
+                <MovieTile title="Mulan" subtitle="2020" tags={["Action", "Drama", "Adventure"]} rate="7,9" votes="39" />
+                <MovieTile title="Mulan" subtitle="2020" tags={["Action", "Drama", "Adventure"]} rate="7,9" votes="39" />
+            </Container>
         </>
     );
 };
