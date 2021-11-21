@@ -1,23 +1,26 @@
 import {
     Wrapper,
     StyledHeader,
-    TittleWrapper,
+    TitleWrapper,
     Search,
-    PageTittle,
+    PageTitle,
     Menu,
     MenuItem,
-    Img,
+    MagnifierImage,
+    CamerPicture,
     Input,
 } from "./styled";
+import search from"./icons/search.svg"
+import video from"./icons/video.svg"
 
 export const Header = () => {
     return (
         <Wrapper>
             <StyledHeader>
-                <TittleWrapper>
-                    <img src='https://i.postimg.cc/pdVjVLc2/Video.png' alt="camera" />
-                    <PageTittle>movies browser</PageTittle>
-                </TittleWrapper>
+                <TitleWrapper>
+                    <CamerPicture src={video} alt="camera" />
+                    <PageTitle>movies browser</PageTitle>
+                </TitleWrapper>
                 <Menu>
                     <MenuItem>
                         movies
@@ -27,7 +30,7 @@ export const Header = () => {
                     </MenuItem>
                 </Menu>
                     <Search>
-                        <Img src='https://i.postimg.cc/rytqwB4R/Search.png' alt='magnifier' />
+                        <MagnifierImage src={search} alt='magnifier' />
                         <Input placeholder="Search for movies..." />
                     </Search>
             </StyledHeader>
