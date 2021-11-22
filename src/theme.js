@@ -1,5 +1,5 @@
 export const theme = {
-  colors: {
+  color: {
     woodsmoke: "#18181B",
     white: "#FFFFFF",
     waterloo: "#7E839A",
@@ -13,7 +13,7 @@ export const theme = {
     black: "#000000",
     mineshaft: "#333333",
   },
-  breakpoints: {
+  breakpoint: {
     mobileMax: "767px",
     tabletMax: "992px",
     mediumScreenMax: "1280px",

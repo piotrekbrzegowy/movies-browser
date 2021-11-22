@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  background-color: ${({ theme }) => theme.colors.mercury};
+  background-color: ${({ theme }) => theme.color.mercury};
   font-family: 'Poppins', sans-serif;
  
 }
