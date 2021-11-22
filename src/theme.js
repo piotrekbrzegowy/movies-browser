@@ -11,6 +11,7 @@ export const theme = {
     silver: "#C4C4C4",
     snuff: "#DDDDEE",
     black: "#000000",
+    mineshaft: "#333333",
   },
   breakpoint: {
     mobileMax: "767px",
