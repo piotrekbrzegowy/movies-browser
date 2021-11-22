@@ -9,4 +9,13 @@ font-size: 36px;
 line-height: 120%;
 color: ${({ theme }) => theme.color.woodsmoke};
 text-transform: capitalize;
+
+@media(max-width: ${({theme}) => theme.breakpoint.mobileMax}){
+    width: 143px;
+    height: 22px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 120%;
+    margin: 24px 0px 12px 16px;
+    };
 `;
