@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
-    margin-bottom: 32px auto;
+    margin-bottom: 32px;
     display: flex;
     flex-direction: row;
     justify-content: center;
