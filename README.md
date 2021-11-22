@@ -4,6 +4,8 @@ Przemek Przybalak
 Piotrek Brzegowy
 Dominik Blak
 
+Demo : https://dominikblak.github.io/movies-browser/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
