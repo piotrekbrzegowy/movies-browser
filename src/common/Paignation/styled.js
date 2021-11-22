@@ -4,6 +4,13 @@ export const Wrapper = styled.div`
   margin: 40px auto 103px;
   display: gird;
   grid-template-columns: auto;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    margin-bottom: 32px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const Button = styled.button`
@@ -20,13 +27,26 @@ export const Button = styled.button`
     color: ${({ theme }) => theme.colors.woodsmoke};
     cursor: default;
   }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    padding: 8px 12px;
+    margin: 0px 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 export const PaginationText = styled.span`
   font-size: 16px;
   color: ${({ theme }) => theme.colors.waterloo};
   line-height: 24px;
-  align-items: center;
+  align-self: center;
+
   margin: 0px 8px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    font-size: 10px;
+    margin: 0 2px;
+  }
 `;
 export const PaginationNumber = styled.span`
   color: ${({ theme }) => theme.colors.woodsmoke};
@@ -34,4 +54,8 @@ export const PaginationNumber = styled.span`
   line-height: 24px;
   margin: 0px 8px;
   align-self: center;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    font-size: 10px;
+    margin: 0 2px;
+  }
 `;

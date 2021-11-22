@@ -11,4 +11,9 @@ export const Arrow = styled(RightArrow)`
     css`
       color: ${({ theme }) => theme.colors.waterloo};
     `}
+  @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    margin: 0px 4px;
+    width: 5px;
+    height: 8px;
+  }
 `;
