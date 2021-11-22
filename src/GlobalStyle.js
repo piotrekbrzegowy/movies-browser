@@ -14,6 +14,5 @@ html {
 body {
   background-color: ${({ theme }) => theme.colors.mercury};
   font-family: 'Poppins', sans-serif;
- 
 }
 `;
