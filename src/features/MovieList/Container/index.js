@@ -5,7 +5,7 @@ export const Container = styled.div`
     margin: auto;
 `;
 
-export const FlexWrapper = styled.div`
+export const MovieTiles = styled.div`
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
