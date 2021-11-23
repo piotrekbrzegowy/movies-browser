@@ -10,8 +10,9 @@ import {
     CamerPicture,
     Input,
 } from "./styled";
-import search from"./icons/search.svg"
-import video from"./icons/video.svg"
+import search from "./icons/search.svg";
+import video from "./icons/video.svg";
+import { StyledNavLink } from "../../GlobalStyle";
 
 export const Header = () => {
     return (
@@ -23,17 +24,19 @@ export const Header = () => {
                 </TitleWrapper>
                 <Menu>
                     <MenuItem>
-                        movies
+                        <StyledNavLink to="/filmy">
+                            movies
+                        </StyledNavLink>
                     </MenuItem>
                     <MenuItem>
-                        people
+                            people
                     </MenuItem>
                 </Menu>
-                    <Search>
-                        <MagnifierImage src={search} alt='magnifier' />
-                        <Input placeholder="Search for movies..." />
-                    </Search>
+                <Search>
+                    <MagnifierImage src={search} alt='magnifier' />
+                    <Input placeholder="Search for movies..." />
+                </Search>
             </StyledHeader>
         </Wrapper>
-    )
+    );
 };
