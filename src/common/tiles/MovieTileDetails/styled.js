@@ -42,7 +42,7 @@ export const DetailsWrapper = styled.div`
 
     @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
         gap: 4px;
-    }
+    };
 `;
 
 export const Title = styled.header`

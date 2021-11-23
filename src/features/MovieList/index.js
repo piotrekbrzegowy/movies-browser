@@ -1,5 +1,5 @@
 import { Container } from "./Container";
-import { MovieTile } from "../../common/tiles/MovieTile"
+import { MovieTile } from "../../common/tiles/MovieTile";
 import { MovieTileDetails } from "../../common/tiles/MovieTileDetails";
 
 export function MovieList() {
