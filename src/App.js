@@ -7,11 +7,11 @@ function App() {
       <nav>
         <Header />
         <Switch>
-          <Route path="/filmy">
+          <Route path="/movies">
             <MovieList />
           </Route>
           <Route path="/">
-            <Redirect to="/filmy" />
+            <Redirect to="/movies" />
           </Route>
         </Switch>
       </nav>
