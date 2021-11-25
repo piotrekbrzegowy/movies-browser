@@ -1,30 +1,27 @@
 import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import { MovieList } from "./features/MovieList/";
 import { Header } from "./common/Header/";
-import { apiConnect } from "./common/apiConnect";
+import { Provider } from "react-redux";
+import store from "./store";
 
 function App() {
-  apiConnect("https://api.themoviedb.org/3/movie/popular?api_key=54628f6d7df0fa35378bd39ea74a55d1&language=en-US&page=1")
-    .then(data => {
-      const title = data.results[0].title;
-      console.log({ message: "Request received!", data, title})
-    })
-    .catch(error => console.error(error))
 
   return <div className="App">
-    <HashRouter>
-      <nav>
-        <Header />
-        <Switch>
-          <Route path="/movies">
-            <MovieList />
-          </Route>
-          <Route path="/">
-            <Redirect to="/movies" />
-          </Route>
-        </Switch>
-      </nav>
-    </HashRouter>
+    <Provider store={store}>
+      <HashRouter>
+        <nav>
+          <Header />
+          <Switch>
+            <Route path="/movies">
+              <MovieList />
+            </Route>
+            <Route path="/">
+              <Redirect to="/movies" />
+            </Route>
+          </Switch>
+        </nav>
+      </HashRouter>
+    </Provider>
   </div>;
 };
 

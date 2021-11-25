@@ -1,21 +1,37 @@
 import { Container, MovieTiles } from "./Container";
 import { MovieTile } from "../../common/tiles/MovieTile"
 import { Header } from "./Header";
+import { apiConnect } from "../../common/apiConnect";
+import { fetchMovieListSuccess, selectMovieList } from "./movieListSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 
 export function MovieList() {
+    const path = "https://api.themoviedb.org/3/movie/popular?api_key=54628f6d7df0fa35378bd39ea74a55d1&language=en-US&page=1";
+
+    apiConnect(path)
+        .then(data => {
+            console.log(fetchMovieListSuccess(data))
+            return fetchMovieListSuccess(data);
+        })
+        .catch(error => console.error(error))
+
+    const dispatch = useDispatch();
+    const results = useSelector(selectMovieList);
+
+    useEffect(() => {
+        dispatch(fetchMovieListSuccess());
+    })
     return (
         <>
             <Container>
                 <Header />
                 <MovieTiles>
-                    <MovieTile title="Mulan long title long titleMulan long title long" subtitle="2020" tags={["Action", "Drama", "Adventure"]} rate="7,9" votes="39" />
-                    <MovieTile title="Mulan long title long title Mulan long title long" subtitle="2020" tags={["Action", "Drama"]} rate="7,9" votes="39" />
-                    <MovieTile title="Mulan" subtitle="2020" tags={["Action"]} rate="9" votes="15" />
-                    <MovieTile title="Mulan" subtitle="2020" tags={["Action", "Drama", "Adventure"]} rate="7,9" votes="39" />
-                    <MovieTile title="Mulan" subtitle="2020" tags={["Action", "Drama", "Adventure"]} rate="7,9" votes="39" />
-                    <MovieTile title="Mulan" subtitle="2020" tags={["Action", "Drama", "Adventure"]} rate="7,9" votes="39" />
-                    <MovieTile title="Mulan" subtitle="2020" tags={["Action", "Drama", "Adventure"]} rate="7,9" votes="39" />
-                    <MovieTile title="Mulan" subtitle="2020" tags={["Action", "Drama", "Adventure"]} rate="7,9" votes="39" />
+        {results.map(({
+            title,
+        }) => (
+            <MovieTile title={title} />
+        ))}
                 </MovieTiles>
             </Container>
         </>
