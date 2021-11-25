@@ -4,7 +4,12 @@ import { Header } from "./common/Header/";
 import { apiConnect } from "./common/apiConnect";
 
 function App() {
-  apiConnect("https://api.themoviedb.org/3/movie/popular?api_key=54628f6d7df0fa35378bd39ea74a55d1&language=en-US&page=1");
+  apiConnect("https://api.themoviedb.org/3/movie/popular?api_key=54628f6d7df0fa35378bd39ea74a55d1&language=en-US&page=1")
+    .then(data => {
+      const title = data.results[0].title;
+      console.log({ message: "Request received!", data, title})
+    })
+    .catch(error => console.error(error))
 
   return <div className="App">
     <HashRouter>
