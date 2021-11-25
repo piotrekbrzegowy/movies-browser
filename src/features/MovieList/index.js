@@ -2,7 +2,7 @@ import { Container, MovieTiles } from "./Container";
 import { MovieTile } from "../../common/tiles/MovieTile"
 import { Header } from "./Header";
 import { apiConnect } from "../../common/apiConnect";
-import { fetchMovieListSuccess, selectMovieList } from "./movieListSlice";
+import { fetchMovieListSuccess, selectMovieList, fetchMovieList } from "./movieListSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
@@ -12,7 +12,6 @@ export function MovieList() {
     apiConnect(path)
         .then(data => {
             console.log(fetchMovieListSuccess(data))
-            return fetchMovieListSuccess(data);
         })
         .catch(error => console.error(error))
 
@@ -20,7 +19,7 @@ export function MovieList() {
     const results = useSelector(selectMovieList);
 
     useEffect(() => {
-        dispatch(fetchMovieListSuccess());
+        dispatch(fetchMovieList());
     })
     return (
         <>
