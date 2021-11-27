@@ -24,8 +24,17 @@ export function MovieList() {
                         poster_path,
                         title,
                         release_date,
+                        vote_count,
+                        vote_average,
                     }) => (
-                        <MovieTile key={id} poster_path={poster_path} title={title} subtitle={release_date} />
+                        <MovieTile
+                            key={id}
+                            poster_path={poster_path}
+                            title={title}
+                            subtitle={release_date}
+                            votes={vote_count}
+                            rate={vote_average}
+                        />
                     ))}
                 </MovieTiles>
             </Container>
