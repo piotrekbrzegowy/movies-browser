@@ -19,7 +19,6 @@ export const StyledHeader = styled.header`
     height: 94px;
 
     @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}){
-    justify-content: flex-start;
     height: 142px;
     };
 `;
