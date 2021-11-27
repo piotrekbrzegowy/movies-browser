@@ -19,6 +19,11 @@ export function MovieList() {
             <Container>
                 <Header />
                 <MovieTiles>
+                {results.map(({
+            title,
+        }) => (
+            <MovieTile title={title} />
+        ))}
                 </MovieTiles>
             </Container>
         </>
