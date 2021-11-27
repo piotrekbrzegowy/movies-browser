@@ -12,18 +12,21 @@ export function MovieList() {
 
     useEffect(() => {
         dispatch(fetchMovieList());
-    })
-    
+    }, []);
+    console.log(results);
     return (
         <>
             <Container>
                 <Header />
                 <MovieTiles>
-                {results.map(({
-            title,
-        }) => (
-            <MovieTile title={title} />
-        ))}
+                    {results.map(({
+                        id,
+                        poster_path,
+                        title,
+                        release_date,
+                    }) => (
+                        <MovieTile key={id} poster_path={poster_path} title={title} subtitle={release_date} />
+                    ))}
                 </MovieTiles>
             </Container>
         </>
