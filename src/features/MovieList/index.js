@@ -13,7 +13,7 @@ export function MovieList() {
     useEffect(() => {
         dispatch(fetchMovieList());
     }, []);
-    console.log(results);
+    
     return (
         <>
             <Container>
