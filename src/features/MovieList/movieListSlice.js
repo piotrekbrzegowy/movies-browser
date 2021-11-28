@@ -22,14 +22,6 @@ const movieListSlice = createSlice({
             state.error = true;
         },
 
-        SetMovieList: (state, { payload: movieList }) => {
-            state.movieList = movieList; 
-        },
-
-        fetchMovieListError: (state) => {
-            state.loading = false;
-            state.error = true
-        }
     },
 });
 
