@@ -11,9 +11,9 @@ function* fetchCommonHandler() {
         yield put(fetchCommonSuccess(genres));
     } catch (error) {
         yield put(fetchCommonError())
-    }
-}
+    };
+};
 
 export function* watchFetchCommon() {
     yield takeLatest(fetchCommon.type, fetchCommonHandler);
-}
+};
