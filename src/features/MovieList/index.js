@@ -1,23 +1,21 @@
 import { Container, MovieTiles } from "./Container";
 import { MovieTile } from "../../common/tiles/MovieTile"
 import { Header } from "./Header";
-import { selectMovieList, fetchMovieList, selectMoviesByQuery } from "./movieListSlice";
+import { fetchMovieList, selectMoviesByQuery } from "./movieListSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { useLocation } from "react-router";
+import { useQueryParameter } from "../../queryParameters";
+import SearchQueryParamName from "../../common/Header/Search/searchQueryParamName";
 
 export function MovieList() {
-
-    const location = useLocation();
-    const query = (new URLSearchParams(location.search)).get("szukaj");
-
+    const query = useQueryParameter(SearchQueryParamName);
     const dispatch = useDispatch();
     const results = useSelector(state => selectMoviesByQuery(state, query));
 
     useEffect(() => {
         dispatch(fetchMovieList());
     }, []);
-    
+
     return (
         <>
             <Container>

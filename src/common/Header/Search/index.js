@@ -1,30 +1,25 @@
-import { Input, MagnifierImage, Wrapper } from "./styled"
+import { Input, MagnifierImage, Wrapper } from "./styled";
 import search from "../icons/search.svg";
-import { useHistory, useLocation } from "react-router";
+import { useQueryParameter, useReplaceQueryParameter } from "../../../queryParameters";
+import SearchQueryParamName from "./searchQueryParamName";
 
 export const Search = () => {
+    const query = useQueryParameter(SearchQueryParamName);
+    const replaceQueryParameter = useReplaceQueryParameter();
 
-    const location = useLocation();
-    const history = useHistory();
-    const query = (new URLSearchParams(location.search).get("szukaj"));
-
-    const onInputChange = ({target}) => {
-        const searchParams = new URLSearchParams(location.search)
-        if (target.value.trim() === "") {
-            searchParams.delete("szukaj");
-        } else {
-            searchParams.set("szukaj", target.value);
-        }
-
-        history.push(`${location.pathname}?${searchParams.toString()}`);
+    const onInputChange = ({ target }) => {
+        replaceQueryParameter({
+            key: SearchQueryParamName,
+            value: target.value.trim() !== "" ? target.value : undefined,
+        });
     };
 
     return (
         <Wrapper>
             <MagnifierImage src={search} alt='magnifier' />
-            <Input placeholder="Search for movies..." 
-            value={query || ""}
-            onChange={onInputChange}
+            <Input placeholder="Search for movies..."
+                value={query || ""}
+                onChange={onInputChange}
             />
         </Wrapper>
     )
