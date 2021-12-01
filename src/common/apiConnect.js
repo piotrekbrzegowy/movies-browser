@@ -2,6 +2,5 @@ import axios from "axios";
 
 export const apiConnect = (path) => {
     return axios.get(path)
-    .then(response => response.data)
-        .catch(error => console.error(error));
+    .then(response => response.data);
 }
