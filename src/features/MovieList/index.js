@@ -10,51 +10,39 @@ import { StateChecker } from "../../common/StateChecker";
 
 export function MovieList() {
   const dispatch = useDispatch();
-  const results = useSelector(selectMovieList);
+
   const currentPage = useSelector(selectCurrentPage);
   const allPages = useSelector(selectAllPages);
+  const results = useSelector(selectMovieList);
+  const isLoading = useSelector(selectLoading);
+  const isError = useSelector(selectError);
 
+  useEffect(() => {
+    dispatch(fetchMovieList());
+    dispatch(fetchCommon());
+  }, []);
 
-    const dispatch = useDispatch();
-    const results = useSelector(selectMovieList);
-    const isLoading = useSelector(selectLoading);
-    const isError = useSelector(selectError);
-
-    useEffect(() => {
-        dispatch(fetchMovieList());
-        dispatch(fetchCommon());
-    }, []);
-
-    return (
-        <>
-            <Container>
-                <StateChecker isLoading={isLoading} isError={isError}>
-                    <Header />
-                    <MovieTiles>
-                        {results.map(({
-                            id,
-                            poster_path,
-                            title,
-                            release_date,
-                            vote_count,
-                            vote_average,
-                            genre_ids,
-                        }) => (
-                            <MovieTile
-                                key={id}
-                                poster_path={poster_path}
-                                title={title}
-                                subtitle={release_date}
-                                genre_ids={genre_ids}
-                                votes={vote_count}
-                                rate={vote_average}
-                            />
-                        ))}
-                    </MovieTiles>
-     <Pagination currentPage={currentPage} allPages={allPages} />
-                </StateChecker>
-            </Container>
-        </>
-    );
-};
-
+  return (
+    <>
+      <Container>
+        <StateChecker isLoading={isLoading} isError={isError}>
+          <Header />
+          <MovieTiles>
+            {results.map(({ id, poster_path, title, release_date, vote_count, vote_average, genre_ids }) => (
+              <MovieTile
+                key={id}
+                poster_path={poster_path}
+                title={title}
+                subtitle={release_date}
+                genre_ids={genre_ids}
+                votes={vote_count}
+                rate={vote_average}
+              />
+            ))}
+          </MovieTiles>
+          <Pagination currentPage={currentPage} allPages={allPages} />
+        </StateChecker>
+      </Container>
+    </>
+  );
+}
