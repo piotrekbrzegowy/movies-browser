@@ -1,14 +1,18 @@
 import { Container, MovieTiles } from "./Container";
 import { MovieTile } from "../../common/tiles/MovieTile"
 import { Header } from "./Header";
-import { selectMovieList, fetchMovieList } from "./movieListSlice";
+import { selectMovieList, fetchMovieList, selectMoviesByQuery } from "./movieListSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import { useLocation } from "react-router";
 
 export function MovieList() {
 
+    const location = useLocation();
+    const query = (new URLSearchParams(location.search)).get("szukaj");
+
     const dispatch = useDispatch();
-    const results = useSelector(selectMovieList);
+    const results = useSelector(state => selectMoviesByQuery(state, query));
 
     useEffect(() => {
         dispatch(fetchMovieList());
