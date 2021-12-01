@@ -2,7 +2,7 @@ import { NextArrow } from "./NextArrow";
 import { PreviousArrow } from "./PreviousArrow";
 import { Wrapper, Button, PaginationText, PaginationNumber } from "./styled";
 
-export const Pagination = ({ children }) => {
+export const Pagination = ({ currentPage }) => {
   const intViewportWidth = window.innerWidth;
   const mobileMax = 767;
   return (
@@ -16,7 +16,7 @@ export const Pagination = ({ children }) => {
         {intViewportWidth < mobileMax ? "" : "Previous"}
       </Button>
       <PaginationText>Page</PaginationText>
-      <PaginationNumber>{children}</PaginationNumber>
+      <PaginationNumber>{currentPage}</PaginationNumber>
       <PaginationText>of</PaginationText>
       <PaginationNumber>500</PaginationNumber>
       <Button>

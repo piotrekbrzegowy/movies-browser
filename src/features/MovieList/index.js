@@ -2,7 +2,7 @@ import { Container, MovieTiles } from "./Container";
 import { Pagination } from "./../../common/Pagination";
 import { MovieTile } from "../../common/tiles/MovieTile";
 import { Header } from "./Header";
-import { selectMovieList, fetchMovieList, selectPage } from "./movieListSlice";
+import { selectMovieList, fetchMovieList, selectCurrentPage } from "./movieListSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchCommon } from "../../common/commonSlice";
@@ -10,7 +10,7 @@ import { fetchCommon } from "../../common/commonSlice";
 export function MovieList() {
   const dispatch = useDispatch();
   const results = useSelector(selectMovieList);
-  const page = useSelector(selectPage);
+  const currentPage = useSelector(selectCurrentPage);
 
   useEffect(() => {
     dispatch(fetchMovieList());
@@ -34,7 +34,7 @@ export function MovieList() {
             />
           ))}
         </MovieTiles>
-        <Pagination children={page} />
+        <Pagination currentPage={currentPage} />
       </Container>
     </>
   );

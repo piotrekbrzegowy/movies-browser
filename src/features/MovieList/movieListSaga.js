@@ -4,7 +4,7 @@ import { fetchMovieList, fetchMovieListSuccess, fetchMovieListError } from "./mo
 import { call, put, takeLatest, delay } from "redux-saga/effects";
 
 function* fetchMovieListHandler() {
-  const path = `${apiLink}movie/popular${apiKey}${language}&page=2`;
+  const path = `${apiLink}movie/popular${apiKey}${language}&page=3`;
 
   try {
     yield delay(200);
