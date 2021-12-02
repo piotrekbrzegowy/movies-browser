@@ -2,7 +2,7 @@ import { Container, MovieTiles } from "./Container";
 import { Pagination } from "./../../common/Pagination";
 import { MovieTile } from "../../common/tiles/MovieTile";
 import { Header } from "./Header";
-import { selectMovieList, fetchMovieList, selectCurrentPage, selectAllPages, selectMoviesByQuery } from "./movieListSlice";
+import { fetchMovieList, selectCurrentPage, selectAllPages, selectMoviesByQuery } from "./movieListSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchCommon, selectError, selectLoading } from "../../common/commonSlice";
