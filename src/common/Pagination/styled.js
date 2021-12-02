@@ -22,10 +22,14 @@ export const Button = styled.button`
   border: none;
   cursor: pointer;
   font-size: 14px;
+  &:hover {
+    filter: brightness(80%);
+  }
   &:disabled {
     background: ${({ theme }) => theme.color.mystic};
     color: ${({ theme }) => theme.color.woodsmoke};
     cursor: default;
+    filter: brightness(100%);
   }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
     padding: 8px 12px;
