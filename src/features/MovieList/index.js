@@ -18,7 +18,7 @@ export function MovieList() {
   const isError = useSelector(selectError);
 
   useEffect(() => {
-    dispatch(fetchMovieList());
+    dispatch(fetchMovieList(currentPage));
     dispatch(fetchCommon());
   }, []);
 
