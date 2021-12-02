@@ -2,7 +2,7 @@ import { Container, MovieTiles } from "./Container";
 import { Pagination } from "./../../common/Pagination";
 import { MovieTile } from "../../common/tiles/MovieTile";
 import { Header } from "./Header";
-import { selectMovieList, fetchMovieList, selectCurrentPage, selectAllPages, resetState } from "./movieListSlice";
+import { selectMovieList, fetchMovieList, selectAllPages, resetState } from "./movieListSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchCommon, selectError, selectLoading } from "../../common/commonSlice";
@@ -13,8 +13,6 @@ import { useUrlParameter } from "../urlHooks";
 export function MovieList() {
   const dispatch = useDispatch();
 
-  const currentPage = useSelector(selectCurrentPage);
-  const allPages = useSelector(selectAllPages);
   const results = useSelector(selectMovieList);
   const isLoading = useSelector(selectLoading);
   const isError = useSelector(selectError);
@@ -44,7 +42,7 @@ export function MovieList() {
               />
             ))}
           </MovieTiles>
-          <Pagination currentPage={currentPage} allPages={allPages} />
+          <Pagination />
         </StateChecker>
       </Container>
     </>

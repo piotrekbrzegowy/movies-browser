@@ -3,11 +3,13 @@ import { PreviousArrow } from "./PreviousArrow";
 import { Wrapper, Button, PaginationText, PaginationNumber } from "./styled";
 import { useUrlParameter, useChangeUrlParameters } from "./../../features/urlHooks";
 import { startPage } from "../startPage";
+import { selectAllPages } from "../../features/MovieList/movieListSlice";
+import { useSelector } from "react-redux";
 
-export const Pagination = ({ allPages }) => {
+export const Pagination = () => {
   const intViewportWidth = window.innerWidth;
   const mobileMax = 767;
-
+  const allPages = useSelector(selectAllPages);
   const urlPageNumber = +useUrlParameter("page");
   const page = startPage(urlPageNumber);
   const changeUrlParameters = useChangeUrlParameters();
