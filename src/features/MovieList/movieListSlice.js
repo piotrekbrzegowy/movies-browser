@@ -6,7 +6,6 @@ const movieListSlice = createSlice({
     movieList: [],
     loading: true,
     error: false,
-    currentPage: undefined,
     allPages: undefined,
   },
   reducers: {
@@ -18,7 +17,6 @@ const movieListSlice = createSlice({
       state.movieList = movieList.results;
       state.loading = false;
       state.error = false;
-      state.currentPage = movieList.page;
       state.allPages = movieList.total_pages;
     },
     fetchMovieListError: (state) => {
@@ -38,7 +36,6 @@ export const { fetchMovieList, fetchMovieListSuccess, fetchMovieListError, reset
 export const selectMovieList = (state) => state.movieList.movieList;
 export const selectError = (state) => state.movieList.error;
 export const selectLoading = (state) => state.movieList.loading;
-export const selectCurrentPage = (state) => state.movieList.currentPage;
 export const selectAllPages = (state) => state.movieList.allPages;
 
 export default movieListSlice.reducer;
