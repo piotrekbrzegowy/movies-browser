@@ -38,6 +38,12 @@ export const Button = styled.button`
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    &:disabled {
+      background: ${({ theme }) => theme.color.mystic};
+      color: ${({ theme }) => theme.color.woodsmoke};
+      cursor: default;
+      filter: brightness(100%);
+    }
   }
 `;
 export const PaginationText = styled.span`
