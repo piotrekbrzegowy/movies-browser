@@ -1,13 +1,16 @@
 import { NextArrow } from "./NextArrow";
 import { PreviousArrow } from "./PreviousArrow";
 import { Wrapper, Button, PaginationText, PaginationNumber } from "./styled";
-import { useUrlParameter, useUrlPageParameters } from "./../../features/urlHooks";
+import { useUrlParameter, useChangeUrlParameters } from "./../../features/urlHooks";
+import { startPage } from "../startPage";
 
-export const Pagination = ({ currentPage, allPages }) => {
+export const Pagination = ({ allPages }) => {
   const intViewportWidth = window.innerWidth;
   const mobileMax = 767;
-  const page = +useUrlParameter("page");
-  const changeUrlParameters = useUrlPageParameters();
+
+  const urlPageNumber = +useUrlParameter("page");
+  const page = startPage(urlPageNumber);
+  const changeUrlParameters = useChangeUrlParameters();
 
   const changeNumerPage = (page) => {
     changeUrlParameters([
@@ -28,7 +31,7 @@ export const Pagination = ({ currentPage, allPages }) => {
         {intViewportWidth < mobileMax ? "" : "Previous"}
       </Button>
       <PaginationText>Page</PaginationText>
-      <PaginationNumber>{currentPage}</PaginationNumber>
+      <PaginationNumber>{page}</PaginationNumber>
       <PaginationText>of</PaginationText>
       <PaginationNumber>{allPages}</PaginationNumber>
       <Button onClick={() => changeNumerPage(page + 1)}>

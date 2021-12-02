@@ -2,11 +2,13 @@ import { Container, MovieTiles } from "./Container";
 import { Pagination } from "./../../common/Pagination";
 import { MovieTile } from "../../common/tiles/MovieTile";
 import { Header } from "./Header";
-import { selectMovieList, fetchMovieList, selectCurrentPage, selectAllPages } from "./movieListSlice";
+import { selectMovieList, fetchMovieList, selectCurrentPage, selectAllPages, resetState } from "./movieListSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchCommon, selectError, selectLoading } from "../../common/commonSlice";
 import { StateChecker } from "../../common/StateChecker";
+import { startPage } from "../../common/startPage";
+import { useUrlParameter } from "../urlHooks";
 
 export function MovieList() {
   const dispatch = useDispatch();
@@ -16,11 +18,13 @@ export function MovieList() {
   const results = useSelector(selectMovieList);
   const isLoading = useSelector(selectLoading);
   const isError = useSelector(selectError);
-
+  const urlPageNumber = +useUrlParameter("page");
+  const page = startPage(urlPageNumber);
   useEffect(() => {
-    dispatch(fetchMovieList(currentPage));
+    dispatch(fetchMovieList({ page }));
     dispatch(fetchCommon());
-  }, []);
+    return () => resetState();
+  }, [page]);
 
   return (
     <>

@@ -6,21 +6,20 @@ export const useUrlParameter = (parameter) => {
   return new URLSearchParams(location.search).get(parameter);
 };
 
-export const useUrlPageParameters = () => {
+export const useChangeUrlParameters = () => {
   const history = useHistory();
   const location = useLocation();
 
   const searchUrlParams = new URLSearchParams(location.search);
 
   const changeUrlParameters = (parameters) => {
-    parameters.forEach((target) => {
-      if (target.value === "") {
-        searchUrlParams.delete(target.key);
+    parameters.forEach(({ key, value }) => {
+      if (value === "") {
+        searchUrlParams.delete(key);
       } else {
-        searchUrlParams.set(target.key, target.value);
+        searchUrlParams.set(key, value);
       }
     });
-
     history.push(`${location.pathname}?${searchUrlParams.toString()}`);
   };
 

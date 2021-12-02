@@ -25,10 +25,16 @@ const movieListSlice = createSlice({
       state.loading = false;
       state.error = true;
     },
+    resetState: (state) => {
+      state.movieList = [];
+      state.loading = true;
+      state.error = false;
+      state.totalResults = undefined;
+    },
   },
 });
 
-export const { fetchMovieList, fetchMovieListSuccess, fetchMovieListError } = movieListSlice.actions;
+export const { fetchMovieList, fetchMovieListSuccess, fetchMovieListError, resetState } = movieListSlice.actions;
 
 export const selectMovieList = (state) => state.movieList.movieList;
 export const selectError = (state) => state.movieList.error;
