@@ -29,7 +29,6 @@ const movieListSlice = createSlice({
       state.movieList = [];
       state.loading = true;
       state.error = false;
-      state.totalResults = undefined;
     },
   },
 });
