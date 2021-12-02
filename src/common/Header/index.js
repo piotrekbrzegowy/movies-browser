@@ -2,17 +2,14 @@ import {
     Wrapper,
     StyledHeader,
     TitleWrapper,
-    Search,
     PageTitle,
     Menu,
     MenuItem,
-    MagnifierImage,
     CamerPicture,
-    Input,
 } from "./styled";
-import search from "./icons/search.svg";
 import video from "./icons/video.svg";
 import { StyledNavLink } from "../../GlobalStyle";
+import { Search } from "./Search";
 
 export const Header = () => {
     return (
@@ -29,13 +26,10 @@ export const Header = () => {
                         </StyledNavLink>
                     </MenuItem>
                     <MenuItem>
-                            people
+                        people
                     </MenuItem>
                 </Menu>
-                <Search>
-                    <MagnifierImage src={search} alt='magnifier' />
-                    <Input placeholder="Search for movies..." />
-                </Search>
+                <Search />
             </StyledHeader>
         </Wrapper>
     );

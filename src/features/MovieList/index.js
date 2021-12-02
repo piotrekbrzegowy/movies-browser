@@ -2,18 +2,21 @@ import { Container, MovieTiles } from "./Container";
 import { Pagination } from "./../../common/Pagination";
 import { MovieTile } from "../../common/tiles/MovieTile";
 import { Header } from "./Header";
-import { selectMovieList, fetchMovieList, selectCurrentPage, selectAllPages } from "./movieListSlice";
+import { selectMovieList, fetchMovieList, selectCurrentPage, selectAllPages, selectMoviesByQuery } from "./movieListSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchCommon, selectError, selectLoading } from "../../common/commonSlice";
 import { StateChecker } from "../../common/StateChecker";
+import { useQueryParameter } from "../../queryParameters";
+import SearchQueryParamName from "../../common/Header/Search/searchQueryParamName";
 
 export function MovieList() {
   const dispatch = useDispatch();
 
+  const query = useQueryParameter(SearchQueryParamName);
+  const results = useSelector(state => selectMoviesByQuery(state, query));
   const currentPage = useSelector(selectCurrentPage);
   const allPages = useSelector(selectAllPages);
-  const results = useSelector(selectMovieList);
   const isLoading = useSelector(selectLoading);
   const isError = useSelector(selectError);
 
