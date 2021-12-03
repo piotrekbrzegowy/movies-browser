@@ -7,3 +7,4 @@ export const ErrorPageContainer = styled.div`
   align-items: center;
   justify-content: center;
 `;
+export const ErrorHeader = styled.h1``;
