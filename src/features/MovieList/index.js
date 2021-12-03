@@ -30,8 +30,7 @@ export function MovieList() {
     <>
       <Container>
         <StateChecker isLoading={isLoading} isError={isError}>
-          <Subtitle title={"popular movies"}>
-          </Subtitle>
+          <Subtitle title={"popular movies"} />
           <MovieTiles>
             {results.map(({ id, poster_path, title, release_date, vote_count, vote_average, genre_ids }) => (
               <MovieTile
