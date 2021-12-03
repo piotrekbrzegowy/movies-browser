@@ -4,6 +4,7 @@ import { fetchCommon, selectError, selectLoading } from "../../common/commonSlic
 import Container from "../../common/Container";
 import { Pagination } from "../../common/Pagination";
 import { StateChecker } from "../../common/StateChecker";
+import { Subtitle } from "../../common/Subtitle";
 import { selectAllPages, selectCurrentPage } from "../MovieList/movieListSlice";
 
 export const PeopleList = () => {
@@ -20,6 +21,7 @@ export const PeopleList = () => {
         <>
             <Container>
                 <StateChecker isLoading={isLoading} isError={isError}>
+                <Subtitle title={"popular people"} />
                     <>nanana</>
                     <Pagination currentPage={currentPage} allPages={allPages} />
                 </StateChecker>
