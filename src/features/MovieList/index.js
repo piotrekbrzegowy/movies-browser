@@ -1,7 +1,7 @@
 import { MovieTiles } from "../../common/MovieTiles";
 import { Pagination } from "./../../common/Pagination";
 import { MovieTile } from "../../common/tiles/MovieTile";
-import { Header } from "./Header";
+import { Subtitle } from "../../common/Subtitle";
 import { fetchMovieList, selectCurrentPage, selectAllPages, selectMoviesByQuery } from "./movieListSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -30,7 +30,8 @@ export function MovieList() {
     <>
       <Container>
         <StateChecker isLoading={isLoading} isError={isError}>
-          <Header />
+          <Subtitle title={"popular movies"}>
+          </Subtitle>
           <MovieTiles>
             {results.map(({ id, poster_path, title, release_date, vote_count, vote_average, genre_ids }) => (
               <MovieTile
