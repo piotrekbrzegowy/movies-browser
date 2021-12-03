@@ -27,7 +27,7 @@ export function MovieList() {
     dispatch(fetchMovieList({ page }));
     dispatch(fetchCommon());
     return () => resetState();
-  }, [page]);
+  }, [dispatch, page]);
 
   return (
     <>
