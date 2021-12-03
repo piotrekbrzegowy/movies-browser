@@ -1,4 +1,4 @@
-import { MovieTiles } from "../../common/MovieTiles";
+import { TilesList } from "../../common/TilesList";
 import { Pagination } from "./../../common/Pagination";
 import { MovieTile } from "../../common/tiles/MovieTile";
 import { Subtitle } from "../../common/Subtitle";
@@ -31,7 +31,7 @@ export function MovieList() {
       <Container>
         <StateChecker isLoading={isLoading} isError={isError}>
           <Subtitle title={"popular movies"} />
-          <MovieTiles>
+          <TilesList>
             {results.map(({ id, poster_path, title, release_date, vote_count, vote_average, genre_ids }) => (
               <MovieTile
                 key={id}
@@ -43,7 +43,7 @@ export function MovieList() {
                 rate={vote_average}
               />
             ))}
-          </MovieTiles>
+          </TilesList>
           <Pagination currentPage={currentPage} allPages={allPages} />
         </StateChecker>
       </Container>
