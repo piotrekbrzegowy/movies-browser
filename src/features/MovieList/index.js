@@ -1,4 +1,4 @@
-import { Container, MovieTiles } from "./Container";
+import { MovieTiles } from "../../common/MovieTiles";
 import { Pagination } from "./../../common/Pagination";
 import { MovieTile } from "../../common/tiles/MovieTile";
 import { Header } from "./Header";
@@ -9,6 +9,7 @@ import { fetchCommon, selectError, selectLoading } from "../../common/commonSlic
 import { StateChecker } from "../../common/StateChecker";
 import { useQueryParameter } from "../../queryParameters";
 import SearchQueryParamName from "../../common/Header/Search/searchQueryParamName";
+import Container from "../../common/Container";
 
 export function MovieList() {
   const dispatch = useDispatch();
