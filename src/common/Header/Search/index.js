@@ -6,6 +6,10 @@ import SearchQueryParamName from "./searchQueryParamName";
 export const Search = () => {
     const query = useQueryParameter(SearchQueryParamName);
     const replaceQueryParameter = useReplaceQueryParameter();
+    const moviesTitle = "Search for movies...";
+    const peopleTitle = "Search for people..";
+    const hashString = window.location.hash;
+    const title = hashString === "#/movies" ? moviesTitle : peopleTitle;
 
     const onInputChange = ({ target }) => {
         replaceQueryParameter({
@@ -17,11 +21,11 @@ export const Search = () => {
     return (
         <Wrapper>
             <MagnifierImage src={search} alt='magnifier' />
-            <Input placeholder="Search for movies..."
+            <Input placeholder={title}
                 value={query || ""}
                 onChange={onInputChange}
             />
         </Wrapper>
-    )
-}
+    );
+};
 
