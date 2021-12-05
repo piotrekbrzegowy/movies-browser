@@ -7,16 +7,18 @@ import { Pagination } from "../../common/Pagination";
 import { StateChecker } from "../../common/StateChecker";
 import { Subtitle } from "../../common/Subtitle";
 import { PeopleTile } from "../../common/tiles/PeopleTile";
-import { selectAllPages, selectCurrentPage } from "../MovieList/movieListSlice";
-import { fetchPeopleList, selectPeopleList } from "./peopleListSlice";
+import { fetchPeopleList, selectPeopleList, selectPeoplesByQuery } from "./peopleListSlice";
+import { Header } from "../../common/Header";
+import { useQueryParameter } from "../../queryParameters";
+import SearchQueryParamName from "../../common/Header/Search/searchQueryParamName";
 
 export const PeopleList = () => {
     const dispatch = useDispatch();
-    const peopleList = useSelector(selectPeopleList);
+
+    const query = useQueryParameter(SearchQueryParamName);
     const isLoading = useSelector(selectLoading);
     const isError = useSelector(selectError);
-    const currentPage = useSelector(selectCurrentPage);
-    const allPages = useSelector(selectAllPages);
+    const results = useSelector((state) => selectPeoplesByQuery(state, query));
 
     useEffect(() => {
         dispatch(fetchCommon());
@@ -24,11 +26,12 @@ export const PeopleList = () => {
     }, []);
     return (
         <>
-            <Container>
-                <StateChecker isLoading={isLoading} isError={isError}>
-                    <Subtitle title={"popular people"} />
+            <StateChecker isLoading={isLoading} isError={isError}>
+                <Header />
+                <Container>
+                    <Subtitle title={"Popular people"} />
                     <TilesList>
-                        {peopleList.map(({ id, profile_path, name }) => (
+                        {results.map(({ id, profile_path, name }) => (
                             <PeopleTile
                                 key={id}
                                 poster_path={profile_path}
@@ -36,9 +39,9 @@ export const PeopleList = () => {
                             />
                         ))}
                     </TilesList>
-                    <Pagination currentPage={currentPage} allPages={allPages} />
-                </StateChecker>
-            </Container>
+                    <Pagination />
+                </Container>
+            </StateChecker>
         </>
     );
 };
