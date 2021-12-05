@@ -2,7 +2,7 @@ import { TilesList } from "../../common/TilesList";
 import { Pagination } from "./../../common/Pagination";
 import { MovieTile } from "../../common/tiles/MovieTile";
 import { Subtitle } from "../../common/Subtitle";
-import { fetchMovieList, selectCurrentPage, selectAllPages, selectMoviesByQuery } from "./movieListSlice";
+import { fetchMovieList, selectMoviesByQuery, resetState } from "./movieListSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchCommon, selectError, selectLoading } from "../../common/commonSlice";
@@ -10,6 +10,7 @@ import { StateChecker } from "../../common/StateChecker";
 import { startPage } from "../../common/startPage";
 import { useUrlParameter } from "../urlHooks";
 import { useQueryParameter } from "../../queryParameters";
+import { Header } from "../../common/Header";
 import SearchQueryParamName from "../../common/Header/Search/searchQueryParamName";
 import Container from "../../common/Container";
 
@@ -31,8 +32,9 @@ export function MovieList() {
 
   return (
     <>
-      <Container>
-        <StateChecker isLoading={isLoading} isError={isError}>
+      <StateChecker isLoading={isLoading} isError={isError}>
+        <Header />
+        <Container>
           <Subtitle title={"popular movies"} />
           <TilesList>
             {results.map(({ id, poster_path, title, release_date, vote_count, vote_average, genre_ids }) => (
@@ -47,9 +49,9 @@ export function MovieList() {
               />
             ))}
           </TilesList>
-          <Pagination currentPage={currentPage} allPages={allPages} />
-        </StateChecker>
-      </Container>
+          <Pagination />
+        </Container>
+      </StateChecker>
     </>
   );
 }
