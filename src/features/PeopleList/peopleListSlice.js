@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { selectMovieList } from "../MovieList/movieListSlice";
 
 const peopleListSlice = createSlice({
     name: "peopleList",
@@ -33,5 +34,12 @@ export const {
 export const selectPeopleList = state => state.peopleList.peopleList;
 export const selectError = state => state.peopleList.error;
 export const selectLoading = state => state.peopleList.loading;
+export const selectPeoplesByQuery = (state, query) => {
+    const peopleList = selectPeopleList(state);
+    if (!query || query.trim() === "") {
+        return peopleList;
+    };
+    return peopleList.filter(({ name }) => name.toUpperCase().includes(query.trim().toUpperCase()));
+};
 
 export default peopleListSlice.reducer;
