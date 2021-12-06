@@ -1,4 +1,4 @@
-import { Content, Image, Title, Wrapper } from "../MovieTile/styled";
+import { Content, Image, Title } from "../MovieTile/styled";
 import { Container } from "./styled";
 
 export const PeopleTile = ({ poster_path, title }) => {
