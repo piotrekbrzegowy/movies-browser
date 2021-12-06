@@ -13,6 +13,7 @@ import { startPage } from "../../common/startPage";
 import { useUrlParameter } from "../urlHooks";
 import SearchQueryParamName from "../../common/Header/Search/searchQueryParamName";
 import Container from "../../common/Container";
+import { PeopleTilesList } from "./styled";
 
 
 export const PeopleList = () => {
@@ -36,7 +37,7 @@ export const PeopleList = () => {
                 <Header />
                 <Container>
                     <Subtitle title={"Popular people"} />
-                    <TilesList>
+                    <PeopleTilesList>
                         {results.map(({ id, profile_path, name }) => (
                             <PeopleTile
                                 key={id}
@@ -44,7 +45,7 @@ export const PeopleList = () => {
                                 title={name}
                             />
                         ))}
-                    </TilesList>
+                    </PeopleTilesList>
                     <Pagination />
                 </Container>
             </StateChecker>
