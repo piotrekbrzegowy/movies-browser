@@ -1,4 +1,4 @@
-import { Image, Title } from "../MovieTile/styled";
+import { Image, Title } from "../../../common/tiles/MovieTile/styled";
 import { Container, ContentPeopleTile } from "./styled";
 
 export const PeopleTile = ({ poster_path, title }) => {

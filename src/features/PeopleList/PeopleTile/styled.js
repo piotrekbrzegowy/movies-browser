@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Content, Image, Wrapper } from "../MovieTile/styled";
+import { Content, Image, Wrapper } from "../../../common/tiles/MovieTile/styled";
 
 export const Container = styled(Wrapper)`
     width: 208px;
