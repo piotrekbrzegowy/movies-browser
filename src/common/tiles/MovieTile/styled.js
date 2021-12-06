@@ -51,6 +51,7 @@ export const Title = styled.header`
     font-weight: 500;
     font-size: 22px;
     color: ${({ theme }) => theme.color.woodsmoke};
+    word-break: break-word;
 
     @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}){
         font-size: 16px;
