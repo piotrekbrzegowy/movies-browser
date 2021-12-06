@@ -7,7 +7,7 @@ import { Pagination } from "../../common/Pagination";
 import { StateChecker } from "../../common/StateChecker";
 import { Subtitle } from "../../common/Subtitle";
 import { PeopleTile } from "./PeopleTile";
-import { fetchPeopleList, resetStatePeopleList, selectPeoplesByQuery } from "./peopleListSlice";
+import { fetchPeopleList, resetStatePeopleList, selectPeoplesByQuery, selectAllPeople } from "./peopleListSlice";
 import { Header } from "../../common/Header";
 import { useQueryParameter } from "../../queryParameters";
 import { startPage } from "../../common/startPage";
@@ -17,6 +17,8 @@ import { PeopleTilesList } from "./styled";
 
 export const PeopleList = () => {
     const dispatch = useDispatch();
+    const allPeople = useSelector(selectAllPeople)
+    console.log(allPeople)
 
     const query = useQueryParameter(SearchQueryParamName);
     const isLoading = useSelector(selectLoading);
