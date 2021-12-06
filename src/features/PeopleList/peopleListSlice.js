@@ -6,6 +6,7 @@ const peopleListSlice = createSlice({
         peopleList: [],
         loading: true,
         error: false,
+        allPages: undefined,
     },
     reducers: {
         fetchPeopleList: (state) => {
@@ -16,6 +17,7 @@ const peopleListSlice = createSlice({
             state.peopleList = peopleList.results;
             state.loading = false;
             state.error = false;
+            state.allPages = peopleList.total_pages
         },
         fetchPeopleListError: (state) => {
             state.loading = false;
@@ -46,6 +48,6 @@ export const selectPeoplesByQuery = (state, query) => {
     };
     return peopleList.filter(({ name }) => name.toUpperCase().includes(query.trim().toUpperCase()));
 };
-export const selectAllPeoplePage = (state) => state.peopleList.total_pages;
+export const selectAllPeoplePage = (state) => state.peopleList.allPages;
 
 export default peopleListSlice.reducer;
