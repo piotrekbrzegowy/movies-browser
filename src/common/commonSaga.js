@@ -4,7 +4,7 @@ import { fetchCommon, fetchCommonSuccess, fetchCommonError } from "./commonSlice
 import { call, delay, put, takeLatest } from "redux-saga/effects";
 
 function* fetchCommonHandler() {
-  const genrePath = `${apiLink}genre/moviee/list${apiKey}${language}`;
+  const genrePath = `${apiLink}genre/movie/list${apiKey}${language}`;
 
   try {
     yield delay(2000);
