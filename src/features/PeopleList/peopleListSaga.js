@@ -3,8 +3,8 @@ import { apiLink, apiKey, language } from "../../common/apiConfiguration";
 import { fetchPeopleList, fetchPeopleListSuccess, fetchPeopleListError } from "./peopleListSlice";
 import { call, delay, put, takeLatest } from "@redux-saga/core/effects";
 
-function* fetchPeopleListHandler() {
-    const path = `${apiLink}person/popular${apiKey}${language}`;
+function* fetchPeopleListHandler({ payload: { page } }) {
+    const path = `${apiLink}person/popular${apiKey}${language}&page=${page}`;
 
     try {
         yield delay(2000);
