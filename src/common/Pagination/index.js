@@ -5,11 +5,16 @@ import { useUrlParameter, useChangeUrlParameters } from "./../../features/urlHoo
 import { startPage } from "../startPage";
 import { selectAllPages } from "../../features/MovieList/movieListSlice";
 import { useSelector } from "react-redux";
+import { selectAllPeoplePage } from "../../features/PeopleList/peopleListSlice";
 
 export const Pagination = () => {
+  const moviesPages = useSelector(selectAllPages);
+  const peoplePages = useSelector(selectAllPeoplePage);
+  const hashString = window.location.hash;
+  const allPages = hashString === "#/movies" ? moviesPages : peoplePages;
+
   const intViewportWidth = window.innerWidth;
   const mobileMax = 767;
-  const allPages = useSelector(selectAllPages);
   const urlPageNumber = +useUrlParameter("page");
   const page = startPage(urlPageNumber);
   const changeUrlParameters = useChangeUrlParameters();
