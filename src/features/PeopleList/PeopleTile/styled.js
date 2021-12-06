@@ -19,6 +19,7 @@ export const Picture  = styled(Image)`
     max-width: 100%;
     max-height: 264px;
     border-radius: 5px;
+    background-color: ${({ theme }) => theme.color.silver};
 
     @media(max-width:${({ theme }) => theme.breakpoint.mobileMax}){
     max-width: 120px;
