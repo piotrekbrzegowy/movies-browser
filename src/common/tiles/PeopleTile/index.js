@@ -1,13 +1,13 @@
-import { Content, Image, Title } from "../MovieTile/styled";
-import { Container } from "./styled";
+import { Image, Title } from "../MovieTile/styled";
+import { Container, ContentPeopleTile } from "./styled";
 
 export const PeopleTile = ({ poster_path, title }) => {
     return (
         <Container>
             <Image src={poster_path ? `https://image.tmdb.org/t/p/w500${poster_path}` : "no image"} alt={`${title} poster`} />
-            <Content>
+            <ContentPeopleTile>
                     <Title>{title}</Title>
-            </Content>
+            </ContentPeopleTile>
         </Container>
     );
 };
