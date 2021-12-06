@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Image, Title, Wrapper } from "../MovieTile/styled";
+import { Content, Image, Wrapper } from "../MovieTile/styled";
 
 export const Container = styled(Wrapper)`
     width: 208px;
@@ -8,30 +8,40 @@ export const Container = styled(Wrapper)`
     
 @media(max-width:${({ theme }) => theme.breakpoint.mobileMax}){
     flex-direction: column;
+    margin: 16px 8px;
     max-width: 136px;
     min-height: 245px;
-    padding: 16px;
-}
+    padding: 8px 8px 16px 8px;
+};
 `;
 
 export const Picture  = styled(Image)`
-    max-width: 176px;
+    max-width: 100%;
     max-height: 264px;
     border-radius: 5px;
 
-    @media(max-width:${({ theme }) => theme.breakpoint.tabletMax}){
+    @media(max-width:${({ theme }) => theme.breakpoint.mobileMax}){
     max-width: 120px;
     max-height: 178px;
-}
+};
 `;
 
-export const Header = styled(Title)`
+export const Header = styled.h3`
     margin: auto;
     margin-bottom: 22px;
 
-    @media(max-width:${({ theme }) => theme.breakpoint.tabletMax}){
+    @media(max-width:${({ theme }) => theme.breakpoint.mobileMax}){
+    padding: 0px;
     margin-bottom: 0px;
     font-size: 14px;
     line-height: 130%;
-}
+    margin-left: -16px;
+};
+`;
+
+export const ContentPeopleTile = styled(Content)`
+    @media(max-width:${({ theme }) => theme.breakpoint.mobileMax}){
+    margin: 8px 0px 0px;
+    text-align: center;
+};   
 `;
