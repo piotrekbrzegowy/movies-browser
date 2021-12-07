@@ -15,6 +15,7 @@ export const theme = {
     mineshaft: "#333333",
   },
   breakpoint: {
+    mobileMin: "480px",
     mobileMax: "767px",
     tabletMax: "992px",
     mediumScreenMax: "1280px",
