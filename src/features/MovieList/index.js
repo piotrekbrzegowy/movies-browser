@@ -3,7 +3,6 @@ import { Pagination } from "./../../common/Pagination";
 import { MovieTile } from "../../common/tiles/MovieTile";
 import { Header } from "./Header";
 import { fetchMovieList, selectMoviesByQuery, resetState } from "./movieListSlice";
-
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchCommon, selectError, selectLoading } from "../../common/commonSlice";
