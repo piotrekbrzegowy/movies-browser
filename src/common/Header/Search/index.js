@@ -9,7 +9,7 @@ export const Search = () => {
     const moviesTitle = "Search for movies...";
     const peopleTitle = "Search for people..";
     const hashString = window.location.hash;
-    const title = hashString === "#/movies" ? moviesTitle : peopleTitle;
+    const title = hashString === "#/people" ? peopleTitle : moviesTitle;
 
     const onInputChange = ({ target }) => {
         replaceQueryParameter({
