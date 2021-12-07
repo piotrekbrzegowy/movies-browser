@@ -1,7 +1,7 @@
-import { Container, MovieTiles } from "./Container";
+import { TilesList } from "../../common/TilesList";
 import { Pagination } from "./../../common/Pagination";
 import { MovieTile } from "../../common/tiles/MovieTile";
-import { Header } from "./Header";
+import { Subtitle } from "../../common/Subtitle";
 import { fetchMovieList, selectMoviesByQuery, resetState } from "./movieListSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -10,7 +10,9 @@ import { StateChecker } from "../../common/StateChecker";
 import { startPage } from "../../common/startPage";
 import { useUrlParameter } from "../urlHooks";
 import { useQueryParameter } from "../../queryParameters";
+import { Header } from "../../common/Header";
 import SearchQueryParamName from "../../common/Header/Search/searchQueryParamName";
+import Container from "../../common/Container";
 
 export function MovieList() {
   const dispatch = useDispatch();
@@ -22,6 +24,7 @@ export function MovieList() {
   const isError = useSelector(selectError);
   const urlPageNumber = +useUrlParameter("page");
   const page = startPage(urlPageNumber);
+
   useEffect(() => {
     dispatch(fetchMovieList({ page }));
     dispatch(fetchCommon());
@@ -30,10 +33,11 @@ export function MovieList() {
 
   return (
     <>
-      <Container>
-        <StateChecker isLoading={isLoading} isError={isError}>
-          <Header />
-          <MovieTiles>
+      <StateChecker isLoading={isLoading} isError={isError}>
+        <Header />
+        <Container>
+          <Subtitle title={"popular movies"} />
+          <TilesList>
             {results.map(({ id, poster_path, title, release_date, vote_count, vote_average, genre_ids }) => (
               <MovieTile
                 key={id}
@@ -45,10 +49,10 @@ export function MovieList() {
                 rate={vote_average}
               />
             ))}
-          </MovieTiles>
+          </TilesList>
           <Pagination />
-        </StateChecker>
-      </Container>
+        </Container>
+      </StateChecker>
     </>
   );
 }

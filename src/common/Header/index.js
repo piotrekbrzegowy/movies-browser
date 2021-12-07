@@ -3,13 +3,11 @@ import {
     StyledHeader,
     TitleWrapper,
     PageTitle,
-    Menu,
-    MenuItem,
     CamerPicture,
 } from "./styled";
 import video from "./icons/video.svg";
-import { StyledNavLink } from "../../GlobalStyle";
 import { Search } from "./Search";
+import { Navigation } from "./Navigation";
 
 export const Header = () => {
     return (
@@ -19,16 +17,7 @@ export const Header = () => {
                     <CamerPicture src={video} alt="camera" />
                     <PageTitle>movies browser</PageTitle>
                 </TitleWrapper>
-                <Menu>
-                    <MenuItem>
-                        <StyledNavLink to="/filmy">
-                            movies
-                        </StyledNavLink>
-                    </MenuItem>
-                    <MenuItem>
-                        people
-                    </MenuItem>
-                </Menu>
+                <Navigation />
                 <Search />
             </StyledHeader>
         </Wrapper>
