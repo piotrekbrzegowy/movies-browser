@@ -17,7 +17,7 @@ const movieListSlice = createSlice({
       state.movieList = movieList.results;
       state.loading = false;
       state.error = false;
-      state.allPages = movieList.total_pages;
+      state.allPages = movieList.page;
     },
     fetchMovieListError: (state) => {
       state.loading = false;
