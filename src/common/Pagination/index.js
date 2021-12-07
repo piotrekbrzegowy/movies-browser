@@ -11,7 +11,7 @@ export const Pagination = () => {
   const moviesPages = useSelector(selectAllPages);
   const peoplePages = useSelector(selectAllPeoplePage);
   const hashString = window.location.hash;
-  const allPages = hashString === "#/movies" ? moviesPages : peoplePages;
+  const allPages = hashString === "/movies" ? moviesPages : peoplePages;
 
   const intViewportWidth = window.innerWidth;
   const mobileMax = 767;
