@@ -24,6 +24,7 @@ export function MovieList() {
   const isError = useSelector(selectError);
   const urlPageNumber = +useUrlParameter("page");
   const page = startPage(urlPageNumber);
+
   useEffect(() => {
     dispatch(fetchMovieList({ page }));
     dispatch(fetchCommon());

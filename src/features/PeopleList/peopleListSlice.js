@@ -19,7 +19,6 @@ const peopleListSlice = createSlice({
             state.loading = false;
             state.error = false;
             state.allPages = peopleList.total_pages
-            state.allPeople = peopleList.name;
         },
         fetchPeopleListError: (state) => {
             state.loading = false;
