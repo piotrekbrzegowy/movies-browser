@@ -26,15 +26,15 @@ export function MovieList() {
   const page = startPage(urlPageNumber);
 
   useEffect(() => {
-    dispatch(fetchMovieList({ page }));
+    dispatch(fetchMovieList({ page, query }));
     dispatch(fetchCommon());
     return () => resetState();
-  }, [dispatch, page]);
+  }, [dispatch, page, query]);
 
   return (
     <>
+      <Header />
       <StateChecker isLoading={isLoading} isError={isError}>
-        <Header />
         <Container>
           <Subtitle title={"popular movies"} />
           <TilesList>
