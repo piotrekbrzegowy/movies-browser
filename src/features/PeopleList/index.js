@@ -17,7 +17,7 @@ import { PeopleTilesList } from "./styled";
 
 export const PeopleList = () => {
     const dispatch = useDispatch();
-    
+
     const query = useQueryParameter(SearchQueryParamName);
     const isLoading = useSelector(selectLoading);
     const isError = useSelector(selectError);
@@ -27,13 +27,13 @@ export const PeopleList = () => {
 
     useEffect(() => {
         dispatch(fetchCommon());
-        dispatch(fetchPeopleList({ page }));
+        dispatch(fetchPeopleList({ page, query }));
         return () => resetStatePeopleList();
-    }, [dispatch, page]);
+    }, [dispatch, page, query]);
     return (
         <>
+            <Header />
             <StateChecker isLoading={isLoading} isError={isError}>
-                <Header />
                 <Container>
                     <Subtitle title={"Popular people"} />
                     <PeopleTilesList>
