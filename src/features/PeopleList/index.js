@@ -7,7 +7,7 @@ import { Pagination } from "../../common/Pagination";
 import { StateChecker } from "../../common/StateChecker";
 import { Subtitle } from "../../common/Subtitle";
 import { PeopleTile } from "./PeopleTile";
-import { fetchPeopleList, resetStatePeopleList, selectPeoplesByQuery } from "./peopleListSlice";
+import { fetchPeopleList, resetStatePeopleList, selectPeoplesByQuery, selectStatus, toggleStatus } from "./peopleListSlice";
 import { Header } from "../../common/Header";
 import { useQueryParameter } from "../../queryParameters";
 import { startPage } from "../../common/startPage";
@@ -24,18 +24,20 @@ export const PeopleList = () => {
     const results = useSelector((state) => selectPeoplesByQuery(state, query));
     const urlPageNumber = +useUrlParameter("page");
     const page = startPage(urlPageNumber);
+    const status = useSelector(selectStatus);
 
     useEffect(() => {
         dispatch(fetchCommon());
         dispatch(fetchPeopleList({ page, query }));
+        dispatch(toggleStatus());
         return () => resetStatePeopleList();
     }, [dispatch, page, query]);
     return (
         <>
             <Header />
-            <StateChecker isLoading={isLoading} isError={isError}>
-                <Container>
-                    <Subtitle title={"Popular people"} />
+            <Container>
+            <StateChecker isLoading={isLoading} isError={isError} status={status} results={results} query={query}>
+                <Subtitle title={query ? `Search results for "${query}"` : "Popular people"} />
                     <PeopleTilesList>
                         {results.map(({ id, profile_path, name }) => (
                             <PeopleTile
@@ -46,8 +48,9 @@ export const PeopleList = () => {
                         ))}
                     </PeopleTilesList>
                     <Pagination />
-                </Container>
-            </StateChecker>
+                </StateChecker>
+            </Container>
+
         </>
     );
 };
