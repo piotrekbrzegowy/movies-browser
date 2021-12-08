@@ -35,10 +35,9 @@ export const PeopleList = () => {
     return (
         <>
             <Header />
-
             <Container>
-                <Subtitle  title={query ? `Search results for "${query}"` : "Popular people"} />
-                <StateChecker isLoading={isLoading} isError={isError} status={status} results={results}>
+            <StateChecker isLoading={isLoading} isError={isError} status={status} results={results} query={query}>
+                <Subtitle title={query ? `Search results for "${query}"` : "Popular people"} />
                     <PeopleTilesList>
                         {results.map(({ id, profile_path, name }) => (
                             <PeopleTile
@@ -50,7 +49,6 @@ export const PeopleList = () => {
                     </PeopleTilesList>
                     <Pagination />
                 </StateChecker>
-
             </Container>
 
         </>
