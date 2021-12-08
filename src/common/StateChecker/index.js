@@ -3,7 +3,6 @@ import { ErrorPage } from "../Error";
 import { NoResults } from "../NoResults";
 
 export const StateChecker = ({ children, isLoading, isError, status, results, query }) => {
-  console.log(status, results)
   return <>
     {
       isLoading ? <Loader />
