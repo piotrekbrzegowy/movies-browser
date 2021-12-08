@@ -9,7 +9,7 @@ function* fetchMovieListHandler({ payload: { page, query } }) {
   : `${apiLink}movie/popular${apiKey}${language}&page=${page}`;
 
   try {
-    yield delay(2000);
+    yield delay(1000);
     const data = yield call(apiConnect, path);
 
     yield put(fetchMovieListSuccess(data));

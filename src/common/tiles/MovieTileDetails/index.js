@@ -6,8 +6,8 @@ import { Wrapper, Image, Content, DetailsWrapper, Title, Subtitle, MovieDetailsT
 export function MovieTileDetails({ title, subtitle, tags, rate, votes, description }) {
     return (
         <Wrapper>
-            <Image src={poster} alt="poster description" />
             <Content>
+            <Image src={poster} alt="poster description" />
                 <DetailsWrapper>
                     <Title>{title}</Title>
                     <Subtitle>{subtitle}</Subtitle>
@@ -16,10 +16,10 @@ export function MovieTileDetails({ title, subtitle, tags, rate, votes, descripti
                         <MovieDetails><MovieDetailsTitle>Release date:</MovieDetailsTitle>24.10.2020</MovieDetails>
                     </MovieDetailsWrapper>
                     <Tags tags={tags} />
-                    <Rating rate={rate} votes={votes} />
+                    <Rating moviePageDetails rate={rate} votes={votes} />
                 </DetailsWrapper>
-                <MovieDescription>{description}</MovieDescription>
             </Content>
+            <MovieDescription>{description}</MovieDescription>
         </Wrapper>
     );
 };

@@ -32,6 +32,11 @@ export const Rate = styled.div`
         font-weight: 500;
     `}
 
+    ${(props) => props.moviePageDetails && css`
+        font-size: 22px;
+        font-weight: 500;
+    `}
+
     @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}){
         font-size: 13px;
 
@@ -45,6 +50,10 @@ export const RateSpan = styled.span`
     font-size: 16px;
     font-weight: 400;
 
+    ${(props) => props.moviePageDetails && css`
+        font-size: 14px;
+    `}
+    
     @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}){
         font-size: 10px;
     };
@@ -56,6 +65,10 @@ export const Votes = styled.div`
 
     ${(props) => props.moviePage && css`
         color: ${({ theme }) => theme.color.white};
+    `}
+
+    ${(props) => props.moviePageDetails && css`
+        font-size: 14px;
     `}
 
     @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}){
