@@ -1,6 +1,15 @@
 import { Loader } from "../Loader";
 import { ErrorPage } from "../Error";
+import { NoResults } from "../NoResults";
 
-export const StateChecker = ({ children, isLoading, isError }) => {
-  return <>{isLoading ? <Loader /> : isError ? <ErrorPage /> : children}</>;
+export const StateChecker = ({ children, isLoading, isError, status, results }) => {
+  console.log(status, results)
+  return <>
+    {
+      isLoading ? <Loader />
+        : isError ? <ErrorPage />
+          : (status === true & results.length === 0) ? <NoResults />
+            : children
+    }
+  </>;
 };
