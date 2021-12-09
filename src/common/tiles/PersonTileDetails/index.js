@@ -1,4 +1,8 @@
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { fetchPerson, selectPerson } from "../../../features/PersonPage/personSlice";
+import { getPosterURLpath } from "../../apiConfiguration";
 import {
   Container,
   PhotoPerson,
@@ -12,28 +16,24 @@ import {
 
 export const PersonTileDetails = () => {
   const { id } = useParams();
+  const { profile_path, name, birthday, place_of_birth, biography } = useSelector(selectPerson);
+  const dispatch = useDispatch();
+  useEffect(() => dispatch(fetchPerson({ id })), [dispatch, id]);
   return (
     <Container>
-      <PhotoPerson />
+      <PhotoPerson src={getPosterURLpath(profile_path)} alt="" />
       <Description>
-        <Title>Actor Name</Title>
+        <Title>{name}</Title>
         <BirthInfo>
           <Wrapper>
-            <BirthdayInfoDetail>20.03. 1990</BirthdayInfoDetail>
+            <BirthdayInfoDetail>{birthday}</BirthdayInfoDetail>
           </Wrapper>
           <Wrapper>
-            <BirthdayInfoDetail>Dallas, Texas, USA</BirthdayInfoDetail>
+            <BirthdayInfoDetail>{place_of_birth}</BirthdayInfoDetail>
           </Wrapper>
         </BirthInfo>
       </Description>
-      <Biography>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-        a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum.
-      </Biography>
+      <Biography>{biography}</Biography>
     </Container>
   );
 };

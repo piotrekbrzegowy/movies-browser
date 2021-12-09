@@ -15,7 +15,6 @@ export const PhotoPerson = styled.img`
   display: block;
   width: 399px;
   height: 564px;
-  background-color: green;
   grid-row: 1 /-1;
   grid-column: 1;
 `;
