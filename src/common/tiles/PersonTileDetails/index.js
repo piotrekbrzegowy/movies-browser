@@ -2,12 +2,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { fetchPerson, selectPerson } from "../../../features/PersonPage/personSlice";
-import { getPosterURLpath } from "../../apiConfiguration";
+import { getPosterUrl } from "../../apiConfiguration";
 import {
   Container,
   PhotoPerson,
-  Title,
-  Description,
+  NameActor,
+  PersonalData,
   BirthInfo,
   Wrapper,
   BirthdayInfoDetail,
@@ -21,9 +21,9 @@ export const PersonTileDetails = () => {
   useEffect(() => dispatch(fetchPerson({ id })), [dispatch, id]);
   return (
     <Container>
-      <PhotoPerson src={getPosterURLpath(profile_path)} alt="" />
-      <Description>
-        <Title>{name}</Title>
+      <PhotoPerson src={getPosterUrl(profile_path)} />
+      <PersonalData>
+        <NameActor>{name}</NameActor>
         <BirthInfo>
           <Wrapper>
             <BirthdayInfoDetail>{birthday}</BirthdayInfoDetail>
@@ -32,7 +32,7 @@ export const PersonTileDetails = () => {
             <BirthdayInfoDetail>{place_of_birth}</BirthdayInfoDetail>
           </Wrapper>
         </BirthInfo>
-      </Description>
+      </PersonalData>
       <Biography>{biography}</Biography>
     </Container>
   );

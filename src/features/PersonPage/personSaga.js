@@ -1,12 +1,11 @@
 import { apiConnect } from "../../common/apiConnect";
 import { apiLink, apiKey, language } from "../../common/apiConfiguration";
-import { call, put, takeLatest, delay } from "redux-saga/effects";
+import { call, put, takeLatest } from "redux-saga/effects";
 import { fetchPerson, fetchPersonError, fetchPersonSuccess } from "./personSlice";
 
 function* PersonHandler() {
   const path = `${apiLink}person/1922${apiKey}${language}`;
   try {
-    yield delay(2000);
     const data = yield call(apiConnect, path);
 
     yield put(fetchPersonSuccess(data));
