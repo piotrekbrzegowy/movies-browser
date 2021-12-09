@@ -13,6 +13,7 @@ import { useQueryParameter } from "../../queryParameters";
 import { Header } from "../../common/Header";
 import SearchQueryParamName from "../../common/Header/Search/searchQueryParamName";
 import Container from "../../common/Container";
+import { PersonTileDetails } from "../../common/tiles/PersonTileDetails";
 
 export function MovieList() {
   const dispatch = useDispatch();
@@ -36,6 +37,7 @@ export function MovieList() {
       <StateChecker isLoading={isLoading} isError={isError}>
         <Header />
         <Container>
+          <PersonTileDetails></PersonTileDetails>
           <Subtitle title={"popular movies"} />
           <TilesList>
             {results.map(({ id, poster_path, title, release_date, vote_count, vote_average, genre_ids }) => (
