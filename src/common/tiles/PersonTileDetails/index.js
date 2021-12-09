@@ -1,3 +1,4 @@
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import {
   Container,
   PhotoPerson,
@@ -10,6 +11,7 @@ import {
 } from "./styled";
 
 export const PersonTileDetails = () => {
+  const { id } = useParams();
   return (
     <Container>
       <PhotoPerson />
