@@ -17,6 +17,7 @@ import {
 export const PersonTileDetails = () => {
   const { id } = useParams();
   const { profile_path, name, birthday, place_of_birth, biography } = useSelector(selectPerson);
+
   const dispatch = useDispatch();
   useEffect(() => dispatch(fetchPerson({ id })), [dispatch, id]);
   return (
@@ -26,7 +27,11 @@ export const PersonTileDetails = () => {
         <NameActor>{name}</NameActor>
         <BirthInfo>
           <Wrapper>
-            <BirthdayInfoDetail>{birthday}</BirthdayInfoDetail>
+            <BirthdayInfoDetail>
+              {birthday &&
+                `${birthday.slice(8, 10)}.${birthday.slice(5, 7)}.
+          ${birthday.slice(0, 4)}`}
+            </BirthdayInfoDetail>
           </Wrapper>
           <Wrapper>
             <BirthdayInfoDetail>{place_of_birth}</BirthdayInfoDetail>
