@@ -1,71 +1,72 @@
 import styled from "styled-components";
 
 export const Container = styled.article`
-  margin: 56px 0 54px 0;
-  background-color: ${({ theme }) => theme.color.white};
-  padding: 40px;
-  display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr;
   gap: 40px;
   row-gap: 24px;
+  margin: 56px 0 54px 0;
+  background-color: ${({ theme }) => theme.color.white};
+  padding: 40px;
+  display: grid;
+
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
-    grid-template-columns: 116px 1fr;
-    grid-template-rows: auto 1fr;
     margin: 16px;
     padding: 16px;
     gap: 16px;
+    grid-template-columns: 116px 1fr;
+    grid-template-rows: auto 1fr;
   }
 `;
 export const PhotoPerson = styled.img`
   display: block;
-  border-radius: 5px;
-  width: 399px;
   height: 564px;
   grid-row: 1 /-1;
   grid-column: 1;
+  border-radius: 5px;
+  width: 399px;
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
-    width: 116px;
     height: auto;
     grid-row: 1;
+    width: 116px;
   }
 `;
 
 export const PersonalData = styled.div`
-  display: grid;
-  grid-template-rows: auto 1fr;
   gap: 24px;
   grid-row: 1;
   grid-column: 2/-1;
+  display: grid;
+  grid-template-rows: auto 1fr;
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
     gap: 16px;
   }
 `;
 export const NameActor = styled.h1`
-  font-weight: 600;
   font-size: 36px;
   margin-top: 8px;
+  font-weight: 600;
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
     font-size: 14px;
     margin: 4px 0 0 0;
   }
 `;
 export const BirthInfo = styled.span`
-  display: grid;
   align-content: flex-start;
   gap: 8px;
+  display: grid;
 `;
 export const Wrapper = styled.span`
-  color: ${({ theme }) => theme.color.stormgray};
-  font-size: 18px;
-  line-height: 24px;
   display: flex;
   flex-wrap: wrap;
   padding-right: 11px;
+  color: ${({ theme }) => theme.color.stormgray};
+  font-size: 18px;
+  line-height: 24px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
-    font-size: 12px;
     line-height: 14.4px;
+    font-size: 12px;
   }
   &:first-child::before {
     content: "Date of the birth:";
@@ -89,13 +90,13 @@ export const BirthdayInfoDetail = styled.article`
   color: ${({ theme }) => theme.color.black};
 `;
 export const Biography = styled.span`
-  font-size: 20px;
-  line-height: 160%;
   grid-row: 2 /-1;
   grid-column: 2 / -1;
+  font-size: 20px;
+  line-height: 160%;
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
-    font-size: 13px;
     line-height: 16.9px;
     grid-column: 1 / -1;
+    font-size: 13px;
   }
 `;
