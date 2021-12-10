@@ -10,6 +10,11 @@ export const Container = styled.article`
   padding: 40px;
   display: grid;
 
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}) {
+    margin: 18px;
+    padding: 18px;
+    gap: 18px;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
     margin: 16px;
     padding: 16px;
@@ -38,6 +43,9 @@ export const PersonalData = styled.div`
   grid-column: 2/-1;
   display: grid;
   grid-template-rows: auto 1fr;
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}) {
+    gap: 18px;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
     gap: 16px;
   }
@@ -46,6 +54,10 @@ export const NameActor = styled.h1`
   font-size: 36px;
   margin-top: 8px;
   font-weight: 600;
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}) {
+    font-size: 20px;
+    margin-top: 6px;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
     font-size: 14px;
     margin: 4px 0 0 0;
@@ -63,26 +75,36 @@ export const Wrapper = styled.span`
   color: ${({ theme }) => theme.color.stormgray};
   font-size: 18px;
   line-height: 24px;
-
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}) {
+    font-size: 16px;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
     line-height: 14.4px;
     font-size: 12px;
   }
+
   &:first-child::before {
     content: "Date of the birth:";
     padding: 0 11px 0 0;
-
+    font-size: 18px;
+    @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}) {
+      font-size: 16px;
+    }
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
       content: "Birth:";
-      padding-right: 11px;
+      padding-right: 5px;
+      font-size: 12px;
     }
   }
   &:nth-child(2)::before {
     content: "Place of the birth:";
     padding-right: 11px;
-
+    @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}) {
+      font-size: 16px;
+    }
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
-      padding-right: 11px;
+      padding-right: 5px;
+      font-size: 12px;
     }
   }
 `;
@@ -94,6 +116,9 @@ export const Biography = styled.span`
   grid-column: 2 / -1;
   font-size: 20px;
   line-height: 160%;
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}) {
+    font-size: 18px;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
     line-height: 16.9px;
     grid-column: 1 / -1;
