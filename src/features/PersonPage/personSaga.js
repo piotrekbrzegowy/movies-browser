@@ -3,8 +3,8 @@ import { apiLink, apiKey, language } from "../../common/apiConfiguration";
 import { call, put, takeLatest } from "redux-saga/effects";
 import { fetchPerson, fetchPersonError, fetchPersonSuccess } from "./personSlice";
 
-function* PersonHandler({ payload: { id } }) {
-  const path = `${apiLink}person/${id}${apiKey}${language}`;
+function* PersonHandler() {
+  const path = `${apiLink}person/1922${apiKey}${language}`;
   try {
     const data = yield call(apiConnect, path);
 
@@ -17,3 +17,6 @@ function* PersonHandler({ payload: { id } }) {
 export function* watchFetchPersonDetails() {
   yield takeLatest(fetchPerson.type, PersonHandler);
 }
+
+// function* PersonHandler({ payload: { id } }) {
+//   const path = `${apiLink}person/${id}${apiKey}${language}`;
