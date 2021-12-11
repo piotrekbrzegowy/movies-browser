@@ -1,15 +1,47 @@
 import { MovieSlider } from "./MovieSlider";
 import { MovieTileDetails } from "../../common/tiles/MovieTileDetails";
 import Container from "../../common/Container";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchElement, resetState, selectElement, selectError, selectLoading } from "../elementSlice";
+import { useEffect } from "react";
+import { StateChecker } from "../../common/StateChecker";
+import { Header } from "../../common/Header";
 
-export const MoviePage = () => {
+export function MoviePage() {
+
+    const dispatch = useDispatch();
+
+    const elementData = useSelector(selectElement);
+
+    const isLoading = useSelector(selectLoading);
+    const isError = useSelector(selectError);
+
+    useEffect(() => {
+        dispatch(fetchElement());
+        return () => resetState();
+    }, [dispatch]);
+
     return (
         <>
-            <MovieSlider title="Mulan long title" />
-            <Container>
-                <MovieTileDetails title="Mulan" subtitle="2020" rate="7,9" votes="200" description="A young Chinese maiden disguises herself as a male warrior in order to save her father. 
-Disguises herself as a male warrior in order to save her father.  A young Chinese maiden disguises herself as a male warrior in order to save her father."/>
-            </Container>
+            <Header />
+            <StateChecker isLoading={isLoading} isError={isError}>
+                <MovieSlider
+                    title={elementData.title}
+                    backdrop={elementData.backdrop_path}
+                    rate={elementData.vote_average}
+                    votes={elementData.vote_count} />
+                <Container>
+                    <MovieTileDetails
+                        poster_path={elementData.poster_path}
+                        title={elementData.title}
+                        subtitle={elementData.release_date}
+                        production_countries={elementData.production_countries}
+                        genres={elementData.genres}
+                        rate={elementData.vote_average}
+                        votes={elementData.vote_count}
+                        description={elementData.overview} />
+                </Container>
+            </StateChecker>
         </>
     )
 };
