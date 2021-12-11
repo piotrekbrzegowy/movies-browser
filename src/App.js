@@ -9,7 +9,7 @@ function App() {
     <HashRouter>
       <nav>
         <Switch>
-          <Route path="/movie-page">
+          <Route path="/movies/movie">
             <MoviePage />
           </Route>
           <Route path="/movies">

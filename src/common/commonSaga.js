@@ -7,7 +7,7 @@ function* fetchCommonHandler() {
   const genrePath = `${apiLink}genre/movie/list${apiKey}${language}`;
 
   try {
-    yield delay(2000);
+    yield delay(1000);
     const genres = yield call(apiConnect, genrePath);
     yield put(fetchCommonSuccess(genres));
   } catch (error) {

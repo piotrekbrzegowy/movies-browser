@@ -2,7 +2,7 @@ import { TilesList } from "../../common/TilesList";
 import { Pagination } from "./../../common/Pagination";
 import { MovieTile } from "../../common/tiles/MovieTile";
 import { Subtitle } from "../../common/Subtitle";
-import { fetchMovieList, selectMoviesByQuery, resetState } from "./movieListSlice";
+import { fetchMovieList, selectMoviesByQuery, resetState, selectStatus, toggleStatus } from "./movieListSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchCommon, selectError, selectLoading } from "../../common/commonSlice";
@@ -24,19 +24,21 @@ export function MovieList() {
   const isError = useSelector(selectError);
   const urlPageNumber = +useUrlParameter("page");
   const page = startPage(urlPageNumber);
+  const status = useSelector(selectStatus);
 
   useEffect(() => {
-    dispatch(fetchMovieList({ page }));
+    dispatch(fetchMovieList({ page, query }));
     dispatch(fetchCommon());
+    dispatch(toggleStatus());
     return () => resetState();
-  }, [dispatch, page]);
+  }, [dispatch, page, query]);
 
   return (
     <>
-      <StateChecker isLoading={isLoading} isError={isError}>
-        <Header />
-        <Container>
-          <Subtitle title={"popular movies"} />
+      <Header />
+      <Container>
+        <StateChecker isLoading={isLoading} isError={isError} status={status} results={results} query={query}>
+          <Subtitle  title={query ? `Search results for "${query}"` : "Popular movies"} />
           <TilesList>
             {results.map(({ id, poster_path, title, release_date, vote_count, vote_average, genre_ids }) => (
               <MovieTile
@@ -51,8 +53,8 @@ export function MovieList() {
             ))}
           </TilesList>
           <Pagination />
-        </Container>
-      </StateChecker>
+        </StateChecker>
+      </Container>
     </>
   );
 }
