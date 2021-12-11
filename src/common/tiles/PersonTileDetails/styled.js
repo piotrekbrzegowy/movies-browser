@@ -23,7 +23,7 @@ export const Container = styled.article`
     grid-template-rows: auto 1fr;
   }
 `;
-export const PhotoPerson = styled.img`
+export const PersonPhoto = styled.img`
   display: block;
   height: 564px;
   grid-row: 1 /-1;
@@ -50,7 +50,7 @@ export const PersonalData = styled.div`
     gap: 16px;
   }
 `;
-export const NameActor = styled.h1`
+export const ActorName = styled.h1`
   font-size: 36px;
   margin-top: 8px;
   font-weight: 600;

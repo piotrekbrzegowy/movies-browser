@@ -5,8 +5,8 @@ import { fetchPerson, selectPerson } from "../../../features/PersonPage/personSl
 import { getPosterUrl } from "../../apiConfiguration";
 import {
   Container,
-  PhotoPerson,
-  NameActor,
+  PersonPhoto,
+  ActorName,
   PersonalData,
   BirthInfo,
   Wrapper,
@@ -22,9 +22,9 @@ export const PersonTileDetails = () => {
   useEffect(() => dispatch(fetchPerson({ id })), [dispatch, id]);
   return (
     <Container>
-      <PhotoPerson src={getPosterUrl(profile_path)} />
+      <PersonPhoto src={getPosterUrl(profile_path)} />
       <PersonalData>
-        <NameActor>{name}</NameActor>
+        <ActorName>{name}</ActorName>
         <BirthInfo>
           <Wrapper>
             <BirthdayInfoDetail>
