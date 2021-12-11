@@ -6,7 +6,7 @@ import { getPosterUrl } from "../../apiConfiguration";
 import {
   Container,
   PersonPhoto,
-  ActorName,
+  Header,
   PersonalData,
   BirthInfo,
   Wrapper,
@@ -24,7 +24,7 @@ export const PersonTileDetails = () => {
     <Container>
       <PersonPhoto src={getPosterUrl(profile_path)} />
       <PersonalData>
-        <ActorName>{name}</ActorName>
+        <Header>{name}</Header>
         <BirthInfo>
           <Wrapper>
             <BirthdayInfoDetail>
