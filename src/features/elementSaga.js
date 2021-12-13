@@ -3,9 +3,9 @@ import { apiLink, apiKey, language } from "../common/apiConfiguration";
 import { fetchElement, fetchElementSuccess, fetchElementError } from "./elementSlice";
 import { call, put, takeLatest, delay } from "redux-saga/effects";
 
-function* fetchElementHandler() {
+function* fetchElementHandler({payload: { id }}) {
 
-    const movieElement = `${apiLink}movie/550${apiKey}${language}`;
+    const movieElement = `${apiLink}movie/${id}/${apiKey}${language}`;
 
     try {
         yield delay(1000);

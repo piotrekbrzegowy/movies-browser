@@ -6,20 +6,25 @@ import { fetchElement, resetState, selectElement, selectError, selectLoading } f
 import { useEffect } from "react";
 import { StateChecker } from "../../common/StateChecker";
 import { Header } from "../../common/Header";
+import { useUrlParameter } from "../urlHooks";
+import { useQueryParameter } from "../../queryParameters";
 
 export function MoviePage() {
 
     const dispatch = useDispatch();
 
+    const query = useQueryParameter("id");
+    console.log(query)
     const elementData = useSelector(selectElement);
-
+    const id = +useUrlParameter("id");
+    
     const isLoading = useSelector(selectLoading);
     const isError = useSelector(selectError);
 
     useEffect(() => {
-        dispatch(fetchElement());
+        dispatch(fetchElement({ id }));
         return () => resetState();
-    }, [dispatch]);
+    }, [dispatch, id]);
 
     return (
         <>
@@ -45,3 +50,4 @@ export function MoviePage() {
         </>
     )
 };
+
