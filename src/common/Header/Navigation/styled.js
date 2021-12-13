@@ -5,8 +5,9 @@ export const Menu = styled.ul`
     grid-template-columns: repeat(2, 1fr);
     margin-left: 32px;
 
-    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}){
+    @media(max-width: ${({ theme }) => theme.breakpoint.tabletMax}){
     margin-left: -32px;
+    gap: 10%;
     };
 `;
 
@@ -20,10 +21,10 @@ export const MenuItem = styled.li`
     line-height: 21px;
     text-transform: uppercase;
 
-    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}){
-    padding: 8px 12px;
+    @media(max-width: ${({ theme }) => theme.breakpoint.tabletMax}){
     font-weight: 600;
     font-size: 12px;
     line-height: 18px;
+    padding: 0;
     };
 `;

@@ -16,8 +16,8 @@ export const Header = () => {
                 <TitleWrapper>
                     <CamerPicture src={video} alt="camera" />
                     <PageTitle>movies browser</PageTitle>
+                    <Navigation />
                 </TitleWrapper>
-                <Navigation />
                 <Search />
             </StyledHeader>
         </Wrapper>

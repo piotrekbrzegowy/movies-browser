@@ -18,9 +18,20 @@ export const Wrapper = styled.article`
     };
 `;
 
+export const NoImage = styled.img`
+    width: 292px;
+    height: 434px;
+    background-color: ${({ theme }) => theme.color.silver};
+
+    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}){
+        max-width: 114px;
+        max-height: 169px;
+    }
+`;
+
 export const Image = styled.img`
     max-width: 292px;
-    max-height: 434px;
+    height: 434px;
 
     @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}){
         max-width: 114px;

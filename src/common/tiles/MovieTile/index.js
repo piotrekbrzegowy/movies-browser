@@ -1,11 +1,15 @@
-import { Wrapper, Image, Content, DetailsWrapper, Title, Subtitle } from "./styled";
+import { Wrapper, Image, Content, DetailsWrapper, Title, Subtitle, NoImage } from "./styled";
 import { Rating } from "../../Rating";
 import { Tags } from "../../Tags";
+import emptyMoviePoster from "./images/emptyMoviePoster.svg"
 
 export function MovieTile({ title, subtitle, poster_path, votes, rate, genre_ids }) {
     return (
         <Wrapper>
-            <Image src={poster_path ? `https://image.tmdb.org/t/p/w500${poster_path}` : "no image"} alt={`${title} poster`} />
+            {poster_path ?
+                <Image src={`https://image.tmdb.org/t/p/w500${poster_path}`} />
+                :
+                <NoImage src={emptyMoviePoster} />}
             <Content>
                 <DetailsWrapper>
                     <Title>{title}</Title>

@@ -11,11 +11,11 @@ export const Wrapper = styled.div`
     display: flex;
     align-items: center;
 
-    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}){
-    margin: 0 auto 16px;
+    @media(max-width: ${({ theme }) => theme.breakpoint.mediumScreenMax}){
+    margin: 0;
     height: 44px;
     width: 284px;
-    }; 
+    };
 `;
 
 export const MagnifierImage = styled.img`
@@ -23,7 +23,7 @@ export const MagnifierImage = styled.img`
     width: 24px;
     height: 24px;
 
-    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}){
+    @media(max-width: ${({ theme }) => theme.breakpoint.mediumScreenMax}){
     width: 16px;
     height: 16px;
     margin: 0px 8px 0px 16px;
@@ -40,7 +40,7 @@ export const Input = styled.input`
     outline: none;
     };
 
-    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}){
+    @media(max-width: ${({ theme }) => theme.breakpoint.mediumScreenMax}){
     font-weight: normal;
     font-size: 13px;
     line-height: 130%;
