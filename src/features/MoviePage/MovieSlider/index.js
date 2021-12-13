@@ -1,16 +1,15 @@
 import { Rating } from "../../../common/Rating";
 import { MovieBackdrop, MovieDetailsWrapper, MovieSliderWrapper, SliderBackground, Title } from "./styled";
-import poster from "./images/slider-background.jpg";
 
-export const MovieSlider = ({ title }) => {
+export const MovieSlider = ({ title, backdrop, rate, votes }) => {
     return (
         <SliderBackground>
             <MovieSliderWrapper>
                 <MovieDetailsWrapper>
                     <Title>{title}</Title>
-                    <Rating moviePage rate="7,9" votes="650"/>
+                    <Rating moviePage rate={rate} votes={votes} />
                 </MovieDetailsWrapper>
-                <MovieBackdrop src={poster} />
+                <MovieBackdrop src={`https://image.tmdb.org/t/p/original/${backdrop}`} />
             </MovieSliderWrapper>
         </SliderBackground>
     )

@@ -7,7 +7,7 @@ export const Wrapper = styled.article`
     padding: 40px;
     margin: 64px 0;
  
-    @media(max-width: ${({theme}) => theme.breakpoint.mobileMax}) {
+    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
         min-height: 200px;
         padding: 16px;
         margin: 16px;
@@ -20,7 +20,7 @@ export const Image = styled.img`
     height: 464px;
     margin: 0 40px 3px 0;
 
-    @media(max-width: ${({theme}) => theme.breakpoint.mobileMax}) {
+    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
         max-width: 114px;
         max-height: 169px;
         margin: 0 16px 3px 0;
@@ -29,7 +29,7 @@ export const Image = styled.img`
 
 export const Content = styled.span`
 
-    @media(max-width: ${({theme}) => theme.breakpoint.mobileMax}) {
+    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
         display: flex;
     };
 `;
@@ -101,5 +101,22 @@ export const MovieDescription = styled.div`
     @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
         font-size: 14px;
         margin-top: 23px;
+    };
+`;
+
+export const List = styled.ul`
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+`;
+
+export const ListItem = styled.li`
+    font-size: 18px;
+
+    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}){
+        font-size: 12px;
     };
 `;
