@@ -5,6 +5,8 @@ import { fetchPerson, fetchPersonError, fetchPersonSuccess } from "./personSlice
 
 function* PersonHandler() {
   const path = `${apiLink}person/1922${apiKey}${language}`;
+  const pathURL = `${apiLink}person/1922/movie_credits${apiKey}${language}`;
+
   try {
     const data = yield call(apiConnect, path);
 
@@ -20,3 +22,5 @@ export function* watchFetchPersonDetails() {
 
 // function* PersonHandler({ payload: { id } }) {
 //   const path = `${apiLink}person/${id}${apiKey}${language}`;
+
+// const pathURL = `${apiLink}person/${id}/movie_credits${apiKey}${language}`;
