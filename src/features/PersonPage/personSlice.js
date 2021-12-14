@@ -4,6 +4,7 @@ const personSlice = createSlice({
   name: "personDetails",
   initialState: {
     person: [],
+    credits: [],
     loading: true,
     error: false,
   },

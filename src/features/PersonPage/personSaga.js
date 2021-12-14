@@ -1,16 +1,16 @@
 import { apiConnect } from "../../common/apiConnect";
 import { apiLink, apiKey, language } from "../../common/apiConfiguration";
-import { call, put, takeLatest } from "redux-saga/effects";
-import { fetchPerson, fetchPersonError, fetchPersonSuccess } from "./personSlice";
+import { all, call, put, takeLatest } from "redux-saga/effects";
+import { fetchPerson, fetchPersonCreditsSuccess, fetchPersonError, fetchPersonSuccess } from "./personSlice";
 
 function* PersonHandler() {
   const path = `${apiLink}person/1922${apiKey}${language}`;
-  const pathURL = `${apiLink}person/1922/movie_credits${apiKey}${language}`;
+  const pathCredits = `${apiLink}person/1922/movie_credits${apiKey}${language}`;
 
   try {
-    const data = yield call(apiConnect, path);
+    const [person, personCredits] = yield all([call(apiConnect, path), call(apiConnect, pathCredits)]);
 
-    yield put(fetchPersonSuccess(data));
+    yield all([put(fetchPersonSuccess(person)), put(fetchPersonCreditsSuccess(personCredits))]);
   } catch (error) {
     yield put(fetchPersonError());
   }
