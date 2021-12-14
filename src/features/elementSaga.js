@@ -5,7 +5,7 @@ import { call, put, takeLatest, delay } from "redux-saga/effects";
 
 function* fetchElementHandler({payload: { id }}) {
 
-    const movieElement = `${apiLink}movie/${id}/${apiKey}${language}`;
+    const movieElement = `${apiLink}movie/${id}${apiKey}${language}`;
 
     try {
         yield delay(1000);
