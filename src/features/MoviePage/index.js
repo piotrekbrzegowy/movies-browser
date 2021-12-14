@@ -6,16 +6,16 @@ import { fetchElement, resetState, selectElement, selectError, selectLoading } f
 import { useEffect } from "react";
 import { StateChecker } from "../../common/StateChecker";
 import { Header } from "../../common/Header";
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 export function MoviePage() {
 
     const dispatch = useDispatch();
+    const location = useLocation();
+    const pathname = location.pathname.substring(14);
+    const id = pathname;
 
     const elementData = useSelector(selectElement);
-    const id = "ID FILMU"
-
-    console.log(elementData.id)
 
     const isLoading = useSelector(selectLoading);
     const isError = useSelector(selectError);
