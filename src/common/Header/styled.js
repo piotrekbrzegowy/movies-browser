@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
 `;
 
 export const StyledHeader = styled.header`
-margin: 0 auto;
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -26,19 +26,18 @@ margin: 0 auto;
 `;
 
 export const TitleWrapper = styled.div`
-    align-self: flex-start;
+    align-self: center;
     display: flex;
     align-items: center;
+    margin: 0 0 0 16px;
 
     @media(max-width: ${({ theme }) => theme.breakpoint.tabletMax}){
         margin: 0;
-        align-self: center;
         justify-content: space-between;
     };
 
     @media(max-width: ${({ theme }) => theme.breakpoint.mediumScreenMax}){
         margin: 0 16px;
-        align-self: center;
     };
 `;
 
