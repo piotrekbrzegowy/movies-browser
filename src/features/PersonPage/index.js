@@ -37,6 +37,19 @@ export const PersonDetails = () => {
       {crew && (
         <>
           <Subtitle title={`Movies - Crew  (${crew.length})`} />
+          <TilesList>
+            {crew.map(({ id, poster_path, title, release_date, vote_count, vote_average, genre_ids, job }) => (
+              <MovieTile
+                key={id}
+                poster_path={poster_path}
+                title={title}
+                subtitle={release_date && `${job} (${release_date.slice(0, 4)})`}
+                genre_ids={genre_ids}
+                votes={vote_count}
+                rate={vote_average}
+              />
+            ))}
+          </TilesList>
         </>
       )}
     </>
