@@ -13,7 +13,7 @@ import { useQueryParameter } from "../../queryParameters";
 import { Header } from "../../common/Header";
 import SearchQueryParamName from "../../common/Header/Search/searchQueryParamName";
 import Container from "../../common/Container";
-import { PersonDetails } from "../PersonPage";
+import { PersonPage } from "../PersonPage";
 
 export function MovieList() {
   const dispatch = useDispatch();
@@ -38,7 +38,7 @@ export function MovieList() {
     <>
       <Header />
       <Container>
-        <PersonDetails />
+        <PersonPage />
         <StateChecker isLoading={isLoading} isError={isError} status={status} results={results} query={query}>
           <Subtitle title={query ? `Search results for "${query}"` : "Popular movies"} />
           <TilesList>

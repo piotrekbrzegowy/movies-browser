@@ -8,7 +8,7 @@ import { Subtitle } from "./../../common/Subtitle";
 import { TilesList } from "../../common/TilesList";
 import { MovieTile } from "../../common/tiles/MovieTile";
 
-export const PersonDetails = () => {
+export const PersonPage = () => {
   const { id } = useParams();
   const { cast, crew } = useSelector(selectPersonCredtis);
 

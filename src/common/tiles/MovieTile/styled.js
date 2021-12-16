@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { ReactComponent as Camera } from "./images/emptyMoviePoster.svg";
 
 export const Wrapper = styled.article`
   width: 324px;
