@@ -8,11 +8,7 @@ import { useSelector } from "react-redux";
 import { selectAllPeoplePage } from "../../features/PeopleList/peopleListSlice";
 
 export const Pagination = () => {
-  const moviesPages = useSelector(selectAllPages);
-  const peoplePages = useSelector(selectAllPeoplePage);
-  const hashString = window.location.hash;
-  const allPages = hashString.includes("/people") ? peoplePages : moviesPages;
-
+  const allPages = 500;
   const intViewportWidth = window.innerWidth;
   const mobileMax = 767;
   const urlPageNumber = +useUrlParameter("page");
