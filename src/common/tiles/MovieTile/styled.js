@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ReactComponent as Camera } from "./images/emptyMoviePoster.svg";
 
 export const Wrapper = styled.article`
   width: 324px;
@@ -21,6 +22,7 @@ export const Wrapper = styled.article`
 export const NoImage = styled.img`
   width: 292px;
   height: 434px;
+
   background-color: ${({ theme }) => theme.color.silver};
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
@@ -36,6 +38,13 @@ export const Image = styled.img`
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
     max-width: 114px;
     max-height: 169px;
+  }
+`;
+export const CameraIcon = styled(Camera)`
+  width: 100px;
+  height: 75px;
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
+    width: 40px;
   }
 `;
 
