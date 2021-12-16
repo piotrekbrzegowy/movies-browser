@@ -120,3 +120,9 @@ export const ListItem = styled.li`
         font-size: 12px;
     };
 `;
+
+export const NoImage = styled(Image)`
+    width: 312px;
+    height: 464px;
+    background-color: ${({ theme }) => theme.color.silver};
+`;
