@@ -27,11 +27,12 @@ export function MoviePage() {
         <>
             <Header />
             <StateChecker isLoading={isLoading} isError={isError}>
-                <MovieSlider
-                    title={elementData.title}
-                    backdrop={elementData.backdrop_path}
-                    rate={elementData.vote_average}
-                    votes={elementData.vote_count} />
+                {elementData.backdrop_path &&
+                    <MovieSlider
+                        title={elementData.title}
+                        backdrop={elementData.backdrop_path}
+                        rate={elementData.vote_average}
+                        votes={elementData.vote_count} />}
                 <Container>
                     <MovieTileDetails
                         poster_path={elementData.poster_path}
