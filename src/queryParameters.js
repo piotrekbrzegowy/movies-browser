@@ -19,6 +19,6 @@ export const useReplaceQueryParameter = () => {
             searchParams.set(key, value);
         }
 
-        history.push(`${location.pathname}?${searchParams.toString()}`);
+        history.push(`${location.pathname.includes("movie") ? "/movies" : "/people"}?${searchParams.toString()}`);
     };
 };
