@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { fetchPerson, selectPersonCredtis } from "./personSlice";
+import { fetchPerson, selectPersonCredits } from "./personSlice";
 import { PersonTileDetails } from "./../../common/tiles/PersonTileDetails";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
@@ -13,7 +13,7 @@ import { useLocation } from "react-router-dom";
 export const PersonPage = () => {
   const location = useLocation();
   const id = location.pathname.substring(14);
-  const { cast, crew } = useSelector(selectPersonCredtis);
+  const { cast, crew } = useSelector(selectPersonCredits);
 
   const dispatch = useDispatch();
   useEffect(() => dispatch(fetchPerson({ id })), [dispatch, id]);

@@ -34,5 +34,5 @@ export const { fetchPerson, fetchPersonSuccess, fetchPersonCreditsSuccess, fetch
 
 export const selectPersonState = (state) => state.personDetails;
 export const selectPerson = (state) => selectPersonState(state).person;
-export const selectPersonCredtis = (state) => selectPersonState(state).credits;
+export const selectPersonCredits = (state) => selectPersonState(state).credits;
 export default personSlice.reducer;
