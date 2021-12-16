@@ -7,7 +7,7 @@ export function MovieTile({ id, title, subtitle, poster_path, votes, rate, genre
   return (
     <Wrapper to={`/movies/movie/${id}`}>
       {poster_path ? (
-        <Image src={`https://image.tmdb.org/t/p/w500${poster_path}`} />
+        <Image src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={`${title} poster`}/>
       ) : (
         <NoImage src={emptyMoviePoster} />
       )}
