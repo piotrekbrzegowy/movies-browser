@@ -47,7 +47,7 @@ export function MovieList() {
                 key={id}
                 poster_path={poster_path}
                 title={title}
-                subtitle={release_date}
+                subtitle={release_date.slice(0, 4)}
                 genre_ids={genre_ids}
                 votes={vote_count}
                 rate={vote_average}
