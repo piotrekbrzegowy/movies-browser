@@ -17,3 +17,8 @@ export const Arrow = styled(RightArrow)`
     height: 8px;
   }
 `;
+export const SecondNextArrow = styled(Arrow)`
+  @media (min-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
+    display: none;
+  } ;
+`;
