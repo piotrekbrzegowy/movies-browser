@@ -14,15 +14,18 @@ export const StyledHeader = styled.header`
     justify-content: center;
     align-items: center;
     max-width: 1368px;
-    height: 94px;
+    min-height: 94px;
 
     @media(max-width: ${({ theme }) => theme.breakpoint.mediumScreenMax}){
     margin: initial;
-    height: 142px;
     justify-content: space-around;
     width: 100%;
     align-self: center;
     };
+
+    @media(max-width: 590px){
+        min-height: 142px;
+    }
 `;
 
 export const TitleWrapper = styled.div`
