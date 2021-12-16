@@ -21,8 +21,3 @@ function* PersonHandler({ payload: { id } }) {
 export function* watchFetchPersonDetails() {
   yield takeLatest(fetchPerson.type, PersonHandler);
 }
-
-// function* PersonHandler({ payload: { id } }) {
-//   const path = `${apiLink}person/${id}${apiKey}${language}`;
-
-// const pathURL = `${apiLink}person/${id}/movie_credits${apiKey}${language}`;

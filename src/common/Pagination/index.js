@@ -24,25 +24,21 @@ export const Pagination = () => {
       <Button disabled={page === 1} onClick={() => changeNumerPage(1)}>
         <PreviousArrow disabled={page === 1} />
         <First>First</First>
-        {/* {intViewportWidth < mobileMax ? <PreviousArrow disabled={page === 1} /> : "First"} */}
       </Button>
       <Button disabled={page === 1} onClick={() => changeNumerPage(page - 1)}>
         <PreviousArrow disabled={page === 1} />
         <Previous>Previous</Previous>
-        {/* {intViewportWidth < mobileMax ? "" : "Previous"} */}
       </Button>
       <PaginationText>Page</PaginationText>
       <PaginationNumber>{page}</PaginationNumber>
       <PaginationText>of</PaginationText>
       <PaginationNumber>{allPages}</PaginationNumber>
       <Button disabled={page === allPages} onClick={() => changeNumerPage(page + 1)}>
-        {/* {intViewportWidth < mobileMax ? "" : "Next"} */}
         <Next>Next</Next>
         <NextArrow disabled={page === allPages} />
       </Button>
       <Button disabled={page === allPages} onClick={() => changeNumerPage(allPages)}>
         <Last>Last</Last>
-        {/* {intViewportWidth < mobileMax ? <NextArrow disabled={page === allPages} /> : "Last"} */}
         <NextArrow disabled={page === allPages} />
         <SecondNextArrow />
       </Button>
