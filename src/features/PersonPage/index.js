@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { Subtitle } from "./../../common/Subtitle";
 import { TilesList } from "../../common/TilesList";
 import { MovieTile } from "../../common/tiles/MovieTile";
-import { ReactComponent as emptyPoster } from "./../PeopleList/PeopleTile/svg/emptyPoster.svg";
+
 export const PersonDetails = () => {
   const { id } = useParams();
   const { cast, crew } = useSelector(selectPersonCredtis);
@@ -24,7 +24,7 @@ export const PersonDetails = () => {
             {cast.map(({ id, poster_path, title, release_date, vote_count, vote_average, genre_ids, character }) => (
               <MovieTile
                 key={id}
-                poster_path={poster_path ? `${poster_path}` : `${emptyPoster}`}
+                poster_path={poster_path}
                 title={title}
                 subtitle={release_date && `${character} (${release_date.slice(0, 4)})`}
                 genre_ids={genre_ids}
