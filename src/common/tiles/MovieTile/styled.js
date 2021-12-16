@@ -40,13 +40,6 @@ export const Image = styled.img`
     max-height: 169px;
   }
 `;
-export const CameraIcon = styled(Camera)`
-  width: 100px;
-  height: 75px;
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
-    width: 40px;
-  }
-`;
 
 export const Content = styled.div`
   display: flex;
