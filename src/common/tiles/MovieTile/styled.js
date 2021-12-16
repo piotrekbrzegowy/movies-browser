@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-export const Wrapper = styled.article`
+export const Wrapper = styled(Link)`
   width: 324px;
   min-height: 650px;
   background-color: ${({ theme }) => theme.color.white};
@@ -9,6 +10,8 @@ export const Wrapper = styled.article`
   padding: 16px;
   display: flex;
   flex-direction: column;
+  text-decoration: none;
+  color: inherit;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
     flex-direction: row;

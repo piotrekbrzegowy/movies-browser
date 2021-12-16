@@ -43,6 +43,7 @@ export function MovieList() {
             {results.map(({ id, poster_path, title, release_date, vote_count, vote_average, genre_ids }) => (
               <MovieTile
                 key={id}
+                id={id}
                 poster_path={poster_path}
                 title={title}
                 subtitle={release_date.slice(0, 4)}

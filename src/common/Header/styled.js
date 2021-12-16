@@ -1,44 +1,46 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-    background-color: ${({ theme }) => theme.color.woodsmoke};
+    background-color: ${({ theme }) => theme.color.black};
 
     @media(max-width: ${({ theme }) => theme.breakpoint.mediumScreentMax}){
     };
 `;
 
 export const StyledHeader = styled.header`
-margin: 0 auto;
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     max-width: 1368px;
-    height: 94px;
+    min-height: 94px;
 
     @media(max-width: ${({ theme }) => theme.breakpoint.mediumScreenMax}){
     margin: initial;
-    height: 142px;
     justify-content: space-around;
     width: 100%;
     align-self: center;
     };
+
+    @media(max-width: 590px){
+        min-height: 142px;
+    }
 `;
 
 export const TitleWrapper = styled.div`
-    align-self: flex-start;
+    align-self: center;
     display: flex;
     align-items: center;
+    margin: 0 0 0 16px;
 
     @media(max-width: ${({ theme }) => theme.breakpoint.tabletMax}){
         margin: 0;
-        align-self: center;
         justify-content: space-between;
     };
 
     @media(max-width: ${({ theme }) => theme.breakpoint.mediumScreenMax}){
         margin: 0 16px;
-        align-self: center;
     };
 `;
 

@@ -6,20 +6,22 @@ import { fetchElement, resetState, selectElement, selectError, selectLoading } f
 import { useEffect } from "react";
 import { StateChecker } from "../../common/StateChecker";
 import { Header } from "../../common/Header";
+import { useLocation } from "react-router-dom";
 
 export function MoviePage() {
 
     const dispatch = useDispatch();
+    const location = useLocation();
+    const id = location.pathname.substring(14);
 
     const elementData = useSelector(selectElement);
-
     const isLoading = useSelector(selectLoading);
     const isError = useSelector(selectError);
 
     useEffect(() => {
-        dispatch(fetchElement());
+        dispatch(fetchElement({ id }));
         return () => resetState();
-    }, [dispatch]);
+    }, [dispatch, id]);
 
     return (
         <>
@@ -45,3 +47,4 @@ export function MoviePage() {
         </>
     )
 };
+

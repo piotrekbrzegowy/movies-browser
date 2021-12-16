@@ -3,20 +3,18 @@ import { Rating } from "../../Rating";
 import { Tags } from "../../Tags";
 import emptyMoviePoster from "./images/emptyMoviePoster.svg";
 
-export function MovieTile({ title, subtitle, poster_path, votes, rate, genre_ids }) {
+export function MovieTile({ id, title, subtitle, poster_path, votes, rate, genre_ids }) {
   return (
-    <Wrapper>
+    <Wrapper to={`/movies/movie/${id}`}>
       {poster_path ? (
         <Image src={`https://image.tmdb.org/t/p/w500${poster_path}`} />
       ) : (
-        <>
-          <NoImage src={emptyMoviePoster}></NoImage>
-        </>
+        <NoImage src={emptyMoviePoster} />
       )}
       <Content>
         <DetailsWrapper>
           <Title>{title}</Title>
-          <Subtitle>{subtitle}</Subtitle>
+          <Subtitle>{subtitle.slice(0, 4)}</Subtitle>
           <Tags genre_ids={genre_ids} />
         </DetailsWrapper>
         <Rating votes={votes} rate={rate} />
