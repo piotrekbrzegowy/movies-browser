@@ -3,9 +3,9 @@ import { Rating } from "../../Rating";
 import { Tags } from "../../Tags";
 import emptyMoviePoster from "./images/emptyMoviePoster.svg"
 
-export function MovieTile({ title, subtitle, poster_path, votes, rate, genre_ids }) {
+export function MovieTile({ id, title, subtitle, poster_path, votes, rate, genre_ids }) {
     return (
-        <Wrapper>
+        <Wrapper to={`/movies/movie/${id}`}>
             {poster_path ?
                 <Image src={`https://image.tmdb.org/t/p/w500${poster_path}`} />
                 :

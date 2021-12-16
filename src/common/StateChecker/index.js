@@ -7,7 +7,7 @@ export const StateChecker = ({ children, isLoading, isError, status, results, qu
     {
       isLoading ? <Loader />
         : isError ? <ErrorPage />
-          : (status === true & results.length === 0) ? <NoResults query={query}/>
+          : results && (status === true & results.length === 0) ? <NoResults query={query}/>
             : children
     }
   </>;
