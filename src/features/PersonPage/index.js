@@ -3,15 +3,16 @@ import { fetchPerson, selectPersonCredtis } from "./personSlice";
 import { PersonTileDetails } from "./../../common/tiles/PersonTileDetails";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { Subtitle } from "./../../common/Subtitle";
 import { TilesList } from "../../common/TilesList";
 import { MovieTile } from "../../common/tiles/MovieTile";
 import Container from "./../../common/Container";
 import { Header } from "./../../common/Header";
+import { useLocation } from "react-router-dom";
 
 export const PersonPage = () => {
-  const { id } = useParams();
+  const location = useLocation();
+  const id = location.pathname.substring(14);
   const { cast, crew } = useSelector(selectPersonCredtis);
 
   const dispatch = useDispatch();

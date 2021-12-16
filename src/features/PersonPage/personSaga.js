@@ -3,9 +3,9 @@ import { apiLink, apiKey, language } from "../../common/apiConfiguration";
 import { call, put, takeLatest } from "redux-saga/effects";
 import { fetchPerson, fetchPersonCreditsSuccess, fetchPersonError, fetchPersonSuccess } from "./personSlice";
 
-function* PersonHandler() {
-  const path = `${apiLink}person/90633${apiKey}${language}`;
-  const pathCredits = `${apiLink}person/90633/movie_credits${apiKey}${language}`;
+function* PersonHandler({ payload: { id } }) {
+  const path = `${apiLink}person/${id}${apiKey}${language}`;
+  const pathCredits = `${apiLink}person/${id}/movie_credits${apiKey}${language}`;
 
   try {
     const person = yield call(apiConnect, path);

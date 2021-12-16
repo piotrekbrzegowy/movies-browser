@@ -14,7 +14,7 @@ export function MovieTile({ id, title, subtitle, poster_path, votes, rate, genre
       <Content>
         <DetailsWrapper>
           <Title>{title}</Title>
-          <Subtitle>{subtitle.slice(0, 4)}</Subtitle>
+          <Subtitle>{subtitle}</Subtitle>
           <Tags genre_ids={genre_ids} />
         </DetailsWrapper>
         <Rating votes={votes} rate={rate} />
