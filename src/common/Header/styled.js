@@ -2,15 +2,13 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
     background-color: ${({ theme }) => theme.color.woodsmoke};
-    height: 94px;
 
-    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}){
-    height: 142px;
+    @media(max-width: ${({ theme }) => theme.breakpoint.mediumScreentMax}){
     };
 `;
 
 export const StyledHeader = styled.header`
-    margin: 0 auto;
+margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -18,21 +16,29 @@ export const StyledHeader = styled.header`
     max-width: 1368px;
     height: 94px;
 
-    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}){
+    @media(max-width: ${({ theme }) => theme.breakpoint.mediumScreenMax}){
+    margin: initial;
     height: 142px;
+    justify-content: space-around;
+    width: 100%;
+    align-self: center;
     };
 `;
 
 export const TitleWrapper = styled.div`
     align-self: flex-start;
-    height: 94px;
     display: flex;
     align-items: center;
 
-    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}){
-    width: 120px;
-    height: 17px;
-    margin: 32px 16px;
+    @media(max-width: ${({ theme }) => theme.breakpoint.tabletMax}){
+        margin: 0;
+        align-self: center;
+        justify-content: space-between;
+    };
+
+    @media(max-width: ${({ theme }) => theme.breakpoint.mediumScreenMax}){
+        margin: 0 16px;
+        align-self: center;
     };
 `;
 
@@ -44,14 +50,13 @@ export const PageTitle = styled.h1`
     padding-left: 16px;
     text-transform: capitalize;
     
-    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}){
-    height: 17px;
-    width: 95px;
+    @media(max-width: ${({ theme }) => theme.breakpoint.tabletMax}){
     padding-left: 0;
     font-weight: 500;
     font-size: 13px;
     line-height: 130%;
     letter-spacing: -0.5px;
+        width: auto;
     };
 `;
 
@@ -59,7 +64,7 @@ export const CamerPicture = styled.img`
     width: 40px;
     height: 40px;
 
-    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}){
+    @media(max-width: ${({ theme }) => theme.breakpoint.tabletMax}){
     width: 17px;
     height: 17px;
     margin-right: 8px;
