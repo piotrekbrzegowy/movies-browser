@@ -31,17 +31,12 @@ const movieListSlice = createSlice({
     },
     toggleStatus: (state) => {
       state.status = true;
-    }
+    },
   },
 });
 
-export const { 
-  fetchMovieList, 
-  fetchMovieListSuccess, 
-  fetchMovieListError, 
-  resetState,
-  toggleStatus, 
-} = movieListSlice.actions;
+export const { fetchMovieList, fetchMovieListSuccess, fetchMovieListError, resetState, toggleStatus } =
+  movieListSlice.actions;
 
 export const selectMovieList = (state) => state.movieList.movieList;
 export const selectError = (state) => state.movieList.error;
@@ -55,7 +50,6 @@ export const selectMoviesByQuery = (state, query) => {
   return movieList.filter(({ title }) => title.toUpperCase().includes(query.trim().toUpperCase()));
 };
 
-export const selectAllPages = (state) => state.movieList.allPages;
 export const selectStatus = (state) => state.movieList.status;
 
 export default movieListSlice.reducer;

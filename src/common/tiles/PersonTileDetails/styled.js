@@ -50,7 +50,7 @@ export const PersonalData = styled.div`
     gap: 16px;
   }
 `;
-export const ActorName = styled.h1`
+export const Header = styled.h1`
   font-size: 36px;
   margin-top: 8px;
   font-weight: 600;

@@ -38,7 +38,7 @@ export function MovieList() {
       <Header />
       <Container>
         <StateChecker isLoading={isLoading} isError={isError} status={status} results={results} query={query}>
-          <Subtitle  title={query ? `Search results for "${query}"` : "Popular movies"} />
+          <Subtitle title={query ? `Search results for "${query}"` : "Popular movies"} />
           <TilesList>
             {results.map(({ id, poster_path, title, release_date, vote_count, vote_average, genre_ids }) => (
               <MovieTile
@@ -46,7 +46,7 @@ export function MovieList() {
                 id={id}
                 poster_path={poster_path}
                 title={title}
-                subtitle={release_date}
+                subtitle={release_date && release_date.slice(0, 4)}
                 genre_ids={genre_ids}
                 votes={vote_count}
                 rate={vote_average}
