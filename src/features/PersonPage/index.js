@@ -14,7 +14,7 @@ export const PersonDetails = () => {
   return (
     <>
       <PersonTileDetails />
-      <Subtitle title={`Movies - Cast (${cast.length})`} />
+      {cast && <Subtitle title={`Movies - Cast (${cast.length})`} />}
     </>
   );
 };
