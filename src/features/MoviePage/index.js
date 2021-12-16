@@ -12,11 +12,9 @@ export function MoviePage() {
 
     const dispatch = useDispatch();
     const location = useLocation();
-    const pathname = location.pathname.substring(14);
-    const id = pathname;
+    const id = location.pathname.substring(14);
 
     const elementData = useSelector(selectElement);
-
     const isLoading = useSelector(selectLoading);
     const isError = useSelector(selectError);
 
