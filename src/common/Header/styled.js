@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-    background-color: ${({ theme }) => theme.color.woodsmoke};
+    background-color: ${({ theme }) => theme.color.black};
 
     @media(max-width: ${({ theme }) => theme.breakpoint.mediumScreentMax}){
     };
