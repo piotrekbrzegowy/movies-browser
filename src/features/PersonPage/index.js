@@ -9,7 +9,7 @@ import { TilesList } from "../../common/TilesList";
 import { MovieTile } from "../../common/tiles/MovieTile";
 export const PersonDetails = () => {
   const { id } = useParams();
-  const { cast } = useSelector(selectPersonCredtis);
+  const { cast, crew } = useSelector(selectPersonCredtis);
 
   const dispatch = useDispatch();
   useEffect(() => dispatch(fetchPerson({ id })), [dispatch, id]);
@@ -32,6 +32,11 @@ export const PersonDetails = () => {
               />
             ))}
           </TilesList>
+        </>
+      )}
+      {crew && (
+        <>
+          <Subtitle title={`Movies - Crew  (${crew.length})`} />
         </>
       )}
     </>

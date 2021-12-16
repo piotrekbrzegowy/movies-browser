@@ -4,8 +4,8 @@ import { all, call, put, takeLatest } from "redux-saga/effects";
 import { fetchPerson, fetchPersonCreditsSuccess, fetchPersonError, fetchPersonSuccess } from "./personSlice";
 
 function* PersonHandler() {
-  const path = `${apiLink}person/1922${apiKey}${language}`;
-  const pathCredits = `${apiLink}person/1922/movie_credits${apiKey}${language}`;
+  const path = `${apiLink}person/90633${apiKey}${language}`;
+  const pathCredits = `${apiLink}person/90633/movie_credits${apiKey}${language}`;
 
   try {
     const [person, personCredits] = yield all([call(apiConnect, path), call(apiConnect, pathCredits)]);
