@@ -7,6 +7,8 @@ import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { Subtitle } from "./../../common/Subtitle";
 import { TilesList } from "../../common/TilesList";
 import { MovieTile } from "../../common/tiles/MovieTile";
+import Container from "./../../common/Container";
+import { Header } from "./../../common/Header";
 
 export const PersonPage = () => {
   const { id } = useParams();
@@ -16,43 +18,46 @@ export const PersonPage = () => {
   useEffect(() => dispatch(fetchPerson({ id })), [dispatch, id]);
   return (
     <>
-      <PersonTileDetails />
-      {cast && (
-        <>
-          <Subtitle title={`Movies - Cast (${cast.length})`} />
-          <TilesList>
-            {cast.map(({ id, poster_path, title, release_date, vote_count, vote_average, genre_ids, character }) => (
-              <MovieTile
-                key={id}
-                poster_path={poster_path}
-                title={title}
-                subtitle={release_date && `${character} (${release_date.slice(0, 4)})`}
-                genre_ids={genre_ids}
-                votes={vote_count}
-                rate={vote_average}
-              />
-            ))}
-          </TilesList>
-        </>
-      )}
-      {crew && (
-        <>
-          <Subtitle title={`Movies - Crew  (${crew.length})`} />
-          <TilesList>
-            {crew.map(({ id, poster_path, title, release_date, vote_count, vote_average, genre_ids, job }) => (
-              <MovieTile
-                key={id}
-                poster_path={poster_path}
-                title={title}
-                subtitle={release_date && `${job} (${release_date.slice(0, 4)})`}
-                genre_ids={genre_ids}
-                votes={vote_count}
-                rate={vote_average}
-              />
-            ))}
-          </TilesList>
-        </>
-      )}
+      <Header />
+      <Container>
+        <PersonTileDetails />
+        {cast && (
+          <>
+            <Subtitle title={`Movies - Cast (${cast.length})`} />
+            <TilesList>
+              {cast.map(({ id, poster_path, title, release_date, vote_count, vote_average, genre_ids, character }) => (
+                <MovieTile
+                  key={id}
+                  poster_path={poster_path}
+                  title={title}
+                  subtitle={release_date && `${character} (${release_date.slice(0, 4)})`}
+                  genre_ids={genre_ids}
+                  votes={vote_count}
+                  rate={vote_average}
+                />
+              ))}
+            </TilesList>
+          </>
+        )}
+        {crew && (
+          <>
+            <Subtitle title={`Movies - Crew  (${crew.length})`} />
+            <TilesList>
+              {crew.map(({ id, poster_path, title, release_date, vote_count, vote_average, genre_ids, job }) => (
+                <MovieTile
+                  key={id}
+                  poster_path={poster_path}
+                  title={title}
+                  subtitle={release_date && `${job} (${release_date.slice(0, 4)})`}
+                  genre_ids={genre_ids}
+                  votes={vote_count}
+                  rate={vote_average}
+                />
+              ))}
+            </TilesList>
+          </>
+        )}
+      </Container>
     </>
   );
 };
