@@ -3,9 +3,6 @@ import { PreviousArrow } from "./PreviousArrow";
 import { Wrapper, Button, PaginationText, PaginationNumber } from "./styled";
 import { useUrlParameter, useChangeUrlParameters } from "./../../features/urlHooks";
 import { startPage } from "../startPage";
-import { selectAllPages } from "../../features/MovieList/movieListSlice";
-import { useSelector } from "react-redux";
-import { selectAllPeoplePage } from "../../features/PeopleList/peopleListSlice";
 
 export const Pagination = () => {
   const allPages = 500;
