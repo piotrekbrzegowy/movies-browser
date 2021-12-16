@@ -19,7 +19,7 @@ export const PersonPage = () => {
   return (
     <>
       <Header />
-      <Container>
+      <Container person>
         <PersonTileDetails />
         {cast && (
           <>
