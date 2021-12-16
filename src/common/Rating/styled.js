@@ -14,7 +14,7 @@ export const RatingWrapper = styled.div`
 
     @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}){
         ${(props) => props.moviePage && css`
-            margin: 0 0 4px 16px;
+            margin: 0 0 16px 16px;
             flex-direction: unset;
             align-items: flex-end;
         `}
