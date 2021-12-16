@@ -88,3 +88,24 @@ export const PaginationNumber = styled.span`
     font-weight: 600;
   }
 `;
+
+export const First = styled.span`
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
+    display: none;
+  } ;
+`;
+export const Previous = styled.span`
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
+    display: none;
+  } ;
+`;
+export const Next = styled.span`
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
+    display: none;
+  } ;
+`;
+export const Last = styled.span`
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
+    display: none;
+  } ;
+`;
