@@ -29,6 +29,7 @@ export const PersonPage = () => {
               {cast.map(({ id, poster_path, title, release_date, vote_count, vote_average, genre_ids, character }) => (
                 <MovieTile
                   key={id}
+                  id={id}
                   poster_path={poster_path}
                   title={title}
                   subtitle={release_date && `${character} (${release_date.slice(0, 4)})`}
@@ -47,6 +48,7 @@ export const PersonPage = () => {
               {crew.map(({ id, poster_path, title, release_date, vote_count, vote_average, genre_ids, job }) => (
                 <MovieTile
                   key={id}
+                  id={id}
                   poster_path={poster_path}
                   title={title}
                   subtitle={release_date && `${job} (${release_date.slice(0, 4)})`}
