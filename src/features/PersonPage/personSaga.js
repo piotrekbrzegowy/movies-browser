@@ -1,6 +1,6 @@
 import { apiConnect } from "../../common/apiConnect";
 import { apiLink, apiKey, language } from "../../common/apiConfiguration";
-import { call, put, takeLatest } from "redux-saga/effects";
+import { call, delay, put, takeLatest } from "redux-saga/effects";
 import { fetchPerson, fetchPersonCreditsSuccess, fetchPersonError, fetchPersonSuccess } from "./personSlice";
 
 function* PersonHandler({ payload: { id } }) {
@@ -8,6 +8,7 @@ function* PersonHandler({ payload: { id } }) {
   const pathCredits = `${apiLink}person/${id}/movie_credits${apiKey}${language}`;
 
   try {
+    yield delay(1000);
     const person = yield call(apiConnect, path);
     const personCredits = yield call(apiConnect, pathCredits);
 
