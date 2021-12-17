@@ -10,27 +10,33 @@ import {
   Wrapper,
   BirthdayInfoDetail,
   Biography,
+  NoImage,
 } from "./styled";
+import emptyMoviePoster from "./images/emptyMoviePoster.svg";
 
 export const PersonTileDetails = () => {
   const { profile_path, name, birthday, place_of_birth, biography } = useSelector(selectPerson);
 
   return (
     <Container>
-      <PersonPhoto src={getPosterUrl(profile_path)} />
+      {profile_path ? (
+                    <PersonPhoto src={getPosterUrl(profile_path)} alt={`${name} poster`}/>
+                ) : (
+                    <NoImage src={emptyMoviePoster} />
+                )}
       <PersonalData>
         <Header>{name}</Header>
         <BirthInfo>
-          <Wrapper>
+          {birthday && <Wrapper>
             <BirthdayInfoDetail>
               {birthday &&
                 `${birthday.slice(8, 10)}.${birthday.slice(5, 7)}.
           ${birthday.slice(0, 4)}`}
             </BirthdayInfoDetail>
-          </Wrapper>
-          <Wrapper>
+          </Wrapper>}
+          {place_of_birth && <Wrapper>
             <BirthdayInfoDetail>{place_of_birth}</BirthdayInfoDetail>
-          </Wrapper>
+          </Wrapper>}
         </BirthInfo>
       </PersonalData>
       <Biography>{biography}</Biography>

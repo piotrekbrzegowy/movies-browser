@@ -19,7 +19,7 @@ export function MovieTileDetails({ poster_path, title, subtitle, genres, rate, v
                 )}
                 <DetailsWrapper>
                     <Title>{title}</Title>
-                    <Subtitle>{subtitle.slice(0, 4)}</Subtitle>
+                    {subtitle && <Subtitle>{subtitle.slice(0, 4)}</Subtitle>}
                     <MovieDetailsWrapper>
                         <MovieDetails>
                             <MovieDetailsTitle>Production:</MovieDetailsTitle>
@@ -29,9 +29,9 @@ export function MovieTileDetails({ poster_path, title, subtitle, genres, rate, v
                                 }
                             </List>
                         </MovieDetails>
-                        <MovieDetails>
+                        {subtitle && <MovieDetails>
                             <MovieDetailsTitle>Release date:</MovieDetailsTitle>{subtitle}
-                        </MovieDetails>
+                        </MovieDetails>}
                     </MovieDetailsWrapper>
                     <Tags movieDetailsGenres={genres} />
                     <Rating moviePageDetails rate={rate} votes={votes} />

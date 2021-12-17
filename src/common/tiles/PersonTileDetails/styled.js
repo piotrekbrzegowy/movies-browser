@@ -125,3 +125,11 @@ export const Biography = styled.span`
     font-size: 13px;
   }
 `;
+
+export const NoImage = styled(PersonPhoto)`
+    background-color: ${({ theme }) => theme.color.silver};
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
+    height: 163px;
+    width: 116px;
+  }
+`;
