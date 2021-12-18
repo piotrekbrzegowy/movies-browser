@@ -62,7 +62,7 @@ export const DetailsWrapper = styled.div`
   gap: 8px;
 `;
 
-export const Title = styled.header`
+export const Title = styled.div`
   font-weight: 500;
   font-size: 22px;
   color: ${({ theme }) => theme.color.woodsmoke};
