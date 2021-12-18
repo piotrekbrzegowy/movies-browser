@@ -1,10 +1,4 @@
-import {
-    Wrapper,
-    StyledHeader,
-    TitleWrapper,
-    PageTitle,
-    CamerPicture,
-} from "./styled";
+import { Wrapper, StyledHeader, TitleWrapper, PageTitle, CamerPicture } from "./styled";
 import video from "./icons/video.svg";
 import { Search } from "./Search";
 import { Navigation } from "./Navigation";

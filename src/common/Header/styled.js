@@ -23,7 +23,7 @@ export const StyledHeader = styled.header`
     align-self: center;
     };
 
-    @media(max-width: 590px){
+    @media(max-width: 650px){
         min-height: 142px;
     }
 `;
@@ -47,6 +47,7 @@ export const TitleWrapper = styled.div`
 export const PageTitle = styled.h1`
     font-size: 24px;
     line-height: 40px;
+    font-weight: 500;
     letter-spacing: -1,5px;
     color: ${({ theme }) => theme.color.white};
     padding-left: 16px;
@@ -54,7 +55,6 @@ export const PageTitle = styled.h1`
     
     @media(max-width: ${({ theme }) => theme.breakpoint.tabletMax}){
     padding-left: 0;
-    font-weight: 500;
     font-size: 13px;
     line-height: 130%;
     letter-spacing: -0.5px;
