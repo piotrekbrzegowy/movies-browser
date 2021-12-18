@@ -1,6 +1,6 @@
 import { MovieSlider } from "./MovieSlider";
 import { MovieTileDetails } from "../../common/tiles/MovieTileDetails";
-import Container from "../../common/Container";
+import { Container } from "../../common/Container";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchElement, resetState, selectElement, selectElementCredits, selectError, selectLoading } from "../elementSlice";
 import { useEffect } from "react";

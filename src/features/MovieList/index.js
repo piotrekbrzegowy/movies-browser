@@ -12,7 +12,7 @@ import { useUrlParameter } from "../urlHooks";
 import { useQueryParameter } from "../../queryParameters";
 import { Header } from "../../common/Header";
 import SearchQueryParamName from "../../common/Header/Search/searchQueryParamName";
-import Container from "../../common/Container";
+import { Container } from "../../common/Container";
 
 export function MovieList() {
   const dispatch = useDispatch();

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import SearchQueryParamName from "../../common/Header/Search/searchQueryParamName";
-import Container from "../../common/Container";
+import { Container } from "../../common/Container";
 import { fetchCommon, selectError, selectLoading } from "../../common/commonSlice";
 import { Pagination } from "../../common/Pagination";
 import { StateChecker } from "../../common/StateChecker";
@@ -36,8 +36,8 @@ export const PeopleList = () => {
         <>
             <Header />
             <Container>
-            <StateChecker isLoading={isLoading} isError={isError} status={status} results={results} query={query}>
-                <Subtitle title={query ? `Search results for "${query}"` : "Popular people"} />
+                <StateChecker isLoading={isLoading} isError={isError} status={status} results={results} query={query}>
+                    <Subtitle title={query ? `Search results for "${query}"` : "Popular people"} />
                     <PeopleTilesList>
                         {results.map(({ id, profile_path, name }) => (
                             <PersonTile

@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { Subtitle } from "./../../common/Subtitle";
 import { TilesList } from "../../common/TilesList";
 import { MovieTile } from "../../common/tiles/MovieTile";
-import Container from "./../../common/Container";
+import { Container } from "./../../common/Container";
 import { Header } from "./../../common/Header";
 import { useLocation } from "react-router-dom";
 import { StateChecker } from "../../common/StateChecker";
