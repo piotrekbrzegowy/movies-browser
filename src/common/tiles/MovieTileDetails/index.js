@@ -1,9 +1,9 @@
+import { useSelector } from "react-redux";
 import { Tags } from "../../Tags";
 import { Rating } from "../../Rating";
 import { Wrapper, Image, Content, DetailsWrapper, Title, Subtitle, MovieDetailsTitle, MovieDetailsWrapper, MovieDetails, MovieDescription, List, ListItem, NoImage } from "./styled";
-import { useSelector } from "react-redux";
 import { selectElement } from "../../../features/elementSlice";
-import emptyMoviePoster from "./images/emptyMoviePoster.svg";
+import emptyMoviePoster from "../../../assets/emptyMoviePoster.svg";
 
 export function MovieTileDetails({ poster_path, title, subtitle, genres, rate, votes, description }) {
 

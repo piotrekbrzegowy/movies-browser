@@ -6,7 +6,6 @@ export const Menu = styled.ul`
     margin-left: 32px;
 
     @media(max-width: ${({ theme }) => theme.breakpoint.tabletMax}){
-    margin-left: -32px;
     gap: 10%;
     };
 `;

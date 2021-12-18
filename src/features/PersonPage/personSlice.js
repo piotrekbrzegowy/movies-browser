@@ -23,18 +23,24 @@ const personSlice = createSlice({
       state.error = false;
       state.credits = personCredits;
     },
-
     fetchPersonError: (state) => {
       state.loading = false;
       state.error = true;
     },
+    resetState: (state) => {
+      state.person = [];
+      state.credits = [];
+      state.loading = true;
+      state.error = false;
+    },
   },
 });
-export const { fetchPerson, fetchPersonSuccess, fetchPersonCreditsSuccess, fetchPersonError } = personSlice.actions;
+export const { fetchPerson, fetchPersonSuccess, fetchPersonCreditsSuccess, fetchPersonError, resetState } = personSlice.actions;
 
 export const selectError = (state) => state.personDetails.error;
 export const selectLoading = (state) => state.personDetails.loading;
 export const selectPersonState = (state) => state.personDetails;
 export const selectPerson = (state) => selectPersonState(state).person;
 export const selectPersonCredits = (state) => selectPersonState(state).credits;
+
 export default personSlice.reducer;

@@ -7,7 +7,6 @@ import peopleListSlice from "./features/PeopleList/peopleListSlice";
 import personSlice from "./features/PersonPage/personSlice";
 import elementSlice from "./features/elementSlice";
 
-
 const sagaMiddleware = createSagaMiddleware();
 
 export default configureStore({
@@ -21,6 +20,5 @@ export default configureStore({
     },
     middleware: [sagaMiddleware],
 })
-
 
 sagaMiddleware.run(rootSaga);

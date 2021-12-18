@@ -1,7 +1,7 @@
 import { Wrapper, Image, Content, DetailsWrapper, Title, Subtitle, NoImage } from "./styled";
 import { Rating } from "../../Rating";
 import { Tags } from "../../Tags";
-import emptyMoviePoster from "./images/emptyMoviePoster.svg";
+import emptyMoviePoster from "../../../assets/emptyMoviePoster.svg";
 
 export function MovieTile({ id, title, subtitle, poster_path, votes, rate, genre_ids }) {
   return (

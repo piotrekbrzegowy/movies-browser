@@ -3,12 +3,14 @@ import { ErrorPage } from "../Error";
 import { NoResults } from "../NoResults";
 
 export const StateChecker = ({ children, isLoading, isError, status, results, query }) => {
-  return <>
-    {
-      isLoading ? <Loader />
-        : isError ? <ErrorPage />
-          : results && (status === true & results.length === 0) ? <NoResults query={query}/>
-            : children
-    }
-  </>;
+  return (
+    <>
+      {
+        isLoading ? <Loader />
+          : isError ? <ErrorPage />
+            : results && (status === true & results.length === 0) ? <NoResults query={query} />
+              : children
+      }
+    </>
+  )
 };

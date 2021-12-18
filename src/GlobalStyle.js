@@ -1,22 +1,22 @@
 import { createGlobalStyle } from "styled-components";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+
 export const GlobalStyle = createGlobalStyle`
 
 html {
-  box-sizing: border-box;
-}
+    box-sizing: border-box;
+};
 
-*,
-::after,
-::before {
-  box-sizing: inherit;
-}
+*, ::after, ::before {
+    box-sizing: inherit;
+};
 
 body {
-  background-color: ${({ theme }) => theme.color.mercury};
-  font-family: 'Poppins', sans-serif;
-}
+    background-color: ${({ theme }) => theme.color.mercury};
+    font-family: 'Poppins', sans-serif;
+    overflow-y: scroll;
+};
 `;
 
 export const StyledNavLink = styled(NavLink)`
@@ -24,8 +24,8 @@ export const StyledNavLink = styled(NavLink)`
     color: white;
     
     &.active {
-      border: 1px solid ${({ theme }) => theme.color.white};
-      border-radius: 24px;
-      padding: 8px 12px;
+        border: 1px solid ${({ theme }) => theme.color.white};
+        border-radius: 24px;
+        padding: 8px 12px;
     };
 `;

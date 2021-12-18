@@ -6,7 +6,7 @@ export const TilesList = styled.div`
     gap: 24px;
     justify-content: center;
 
-    @media(max-width: ${({theme}) => theme.breakpoint.mobileMax}){
+    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}){
         gap: 16px;
     };
 `;

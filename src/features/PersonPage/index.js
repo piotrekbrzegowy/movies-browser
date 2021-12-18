@@ -1,26 +1,30 @@
 import { useSelector } from "react-redux";
-import { fetchPerson, selectError, selectLoading, selectPersonCredits } from "./personSlice";
-import { PersonTileDetails } from "./../../common/tiles/PersonTileDetails";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { fetchPerson, selectError, selectLoading, selectPersonCredits, resetState } from "./personSlice";
+import { PersonTileDetails } from "./../../common/tiles/PersonTileDetails";
 import { Subtitle } from "./../../common/Subtitle";
 import { TilesList } from "../../common/TilesList";
 import { MovieTile } from "../../common/tiles/MovieTile";
-import Container from "./../../common/Container";
+import { Container } from "./../../common/Container";
 import { Header } from "./../../common/Header";
-import { useLocation } from "react-router-dom";
 import { StateChecker } from "../../common/StateChecker";
 
 export const PersonPage = () => {
   const location = useLocation();
+  const dispatch = useDispatch();
   const id = location.pathname.substring(14);
-  const { cast, crew } = useSelector(selectPersonCredits);
 
+  const { cast, crew } = useSelector(selectPersonCredits);
   const isLoading = useSelector(selectLoading);
   const isError = useSelector(selectError);
 
-  const dispatch = useDispatch();
-  useEffect(() => dispatch(fetchPerson({ id })), [dispatch, id]);
+  useEffect(() => {
+    dispatch(fetchPerson({ id }));
+    return () => resetState();
+  }, [dispatch, id]);
+
   return (
     <>
       <Header />

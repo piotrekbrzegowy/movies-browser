@@ -1,19 +1,18 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import SearchQueryParamName from "../../common/Header/Search/searchQueryParamName";
-import Container from "../../common/Container";
+import { Container } from "../../common/Container";
 import { fetchCommon, selectError, selectLoading } from "../../common/commonSlice";
 import { Pagination } from "../../common/Pagination";
 import { StateChecker } from "../../common/StateChecker";
 import { Subtitle } from "../../common/Subtitle";
-import { PeopleTile } from "./PeopleTile";
+import { PersonTile } from "../../common/tiles/PersonTile";
 import { fetchPeopleList, resetStatePeopleList, selectPeoplesByQuery, selectStatus, toggleStatus } from "./peopleListSlice";
 import { Header } from "../../common/Header";
 import { useQueryParameter } from "../../queryParameters";
 import { startPage } from "../../common/startPage";
 import { useUrlParameter } from "../urlHooks";
 import { PeopleTilesList } from "./styled";
-
 
 export const PeopleList = () => {
     const dispatch = useDispatch();
@@ -32,15 +31,16 @@ export const PeopleList = () => {
         dispatch(toggleStatus());
         return () => resetStatePeopleList();
     }, [dispatch, page, query]);
+    
     return (
         <>
             <Header />
             <Container>
-            <StateChecker isLoading={isLoading} isError={isError} status={status} results={results} query={query}>
-                <Subtitle title={query ? `Search results for "${query}"` : "Popular people"} />
+                <StateChecker isLoading={isLoading} isError={isError} status={status} results={results} query={query}>
+                    <Subtitle title={query ? `Search results for "${query}"` : "Popular people"} />
                     <PeopleTilesList>
                         {results.map(({ id, profile_path, name }) => (
-                            <PeopleTile
+                            <PersonTile
                                 key={id}
                                 id={id}
                                 poster_path={profile_path}
@@ -51,7 +51,6 @@ export const PeopleList = () => {
                     <Pagination />
                 </StateChecker>
             </Container>
-
         </>
     );
 };
