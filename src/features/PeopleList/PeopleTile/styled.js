@@ -5,17 +5,17 @@ export const Container = styled(Wrapper)`
     width: 208px;
     min-height: 339px;
     padding-bottom: 22px;
+    margin: 0;
     
 @media(max-width:${({ theme }) => theme.breakpoint.mobileMax}){
     flex-direction: column;
-    margin: 16px 8px;
     max-width: 136px;
     min-height: 245px;
     padding: 8px 8px 16px 8px;
 };
 `;
 
-export const Picture  = styled(Image)`
+export const Picture = styled(Image)`
     max-width: 100%;
     max-height: 264px;
     border-radius: 5px;
@@ -45,4 +45,27 @@ export const ContentPeopleTile = styled(Content)`
     margin: 8px 0px 0px;
     text-align: center;
 };   
+`;
+
+export const Subtitle = styled.div`
+    font-size: 18px;
+    color: ${({ theme }) => theme.color.waterloo};
+    margin: 8px 0 0 0;
+    text-align: center;
+
+    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}){
+        font-size: 13px;
+    }
+`;
+
+export const Title = styled.header`
+  font-weight: 500;
+  font-size: 22px;
+  color: ${({ theme }) => theme.color.woodsmoke};
+  word-break: break-word;
+  text-align: center;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
+    font-size: 14px;
+  } ;
 `;
