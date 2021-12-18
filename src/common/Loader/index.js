@@ -1,5 +1,5 @@
-import spinner from "../../assets/spinner.svg";
 import { SpinnerContainer, Spinner } from "./styled";
+import spinner from "../../assets/spinner.svg";
 
 export const Loader = () => {
     return (

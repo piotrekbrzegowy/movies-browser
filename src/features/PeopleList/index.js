@@ -14,7 +14,6 @@ import { startPage } from "../../common/startPage";
 import { useUrlParameter } from "../urlHooks";
 import { PeopleTilesList } from "./styled";
 
-
 export const PeopleList = () => {
     const dispatch = useDispatch();
 
@@ -32,6 +31,7 @@ export const PeopleList = () => {
         dispatch(toggleStatus());
         return () => resetStatePeopleList();
     }, [dispatch, page, query]);
+    
     return (
         <>
             <Header />
@@ -51,7 +51,6 @@ export const PeopleList = () => {
                     <Pagination />
                 </StateChecker>
             </Container>
-
         </>
     );
 };

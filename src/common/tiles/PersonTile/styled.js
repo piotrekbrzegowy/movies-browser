@@ -7,12 +7,12 @@ export const Container = styled(Wrapper)`
     padding-bottom: 22px;
     margin: 0;
     
-@media(max-width:${({ theme }) => theme.breakpoint.mobileMax}){
-    flex-direction: column;
-    max-width: 136px;
-    min-height: 245px;
-    padding: 8px 8px 16px 8px;
-};
+    @media(max-width:${({ theme }) => theme.breakpoint.mobileMax}){
+        flex-direction: column;
+        max-width: 136px;
+        min-height: 245px;
+        padding: 8px 8px 16px 8px;
+    };
 `;
 
 export const Picture = styled(Image)`
@@ -22,9 +22,9 @@ export const Picture = styled(Image)`
     background-color: ${({ theme }) => theme.color.silver};
 
     @media(max-width:${({ theme }) => theme.breakpoint.mobileMax}){
-    max-width: 120px;
-    max-height: 178px;
-};
+        max-width: 120px;
+        max-height: 178px;
+    };
 `;
 
 export const Header = styled.h3`
@@ -32,19 +32,19 @@ export const Header = styled.h3`
     margin-bottom: 22px;
 
     @media(max-width:${({ theme }) => theme.breakpoint.mobileMax}){
-    padding: 0px;
-    margin-bottom: 0px;
-    font-size: 14px;
-    line-height: 130%;
-    margin-left: -16px;
-};
+        padding: 0px;
+        margin-bottom: 0px;
+        font-size: 14px;
+        line-height: 130%;
+        margin-left: -16px;
+    };
 `;
 
 export const ContentPeopleTile = styled(Content)`
     @media(max-width:${({ theme }) => theme.breakpoint.mobileMax}){
-    margin: 8px 0px 0px;
-    text-align: center;
-};   
+        margin: 8px 0px 0px;
+        text-align: center;
+    };   
 `;
 
 export const Subtitle = styled.div`
@@ -55,17 +55,17 @@ export const Subtitle = styled.div`
 
     @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}){
         font-size: 13px;
-    }
+    };
 `;
 
 export const Title = styled.header`
-  font-weight: 500;
-  font-size: 22px;
-  color: ${({ theme }) => theme.color.woodsmoke};
-  word-break: break-word;
-  text-align: center;
+    font-weight: 500;
+    font-size: 22px;
+    color: ${({ theme }) => theme.color.woodsmoke};
+    word-break: break-word;
+    text-align: center;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
-    font-size: 14px;
-  } ;
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
+        font-size: 14px;
+    };
 `;

@@ -1,14 +1,14 @@
 import { useSelector } from "react-redux";
-import { fetchPerson, selectError, selectLoading, selectPersonCredits, resetState } from "./personSlice";
-import { PersonTileDetails } from "./../../common/tiles/PersonTileDetails";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { fetchPerson, selectError, selectLoading, selectPersonCredits, resetState } from "./personSlice";
+import { PersonTileDetails } from "./../../common/tiles/PersonTileDetails";
 import { Subtitle } from "./../../common/Subtitle";
 import { TilesList } from "../../common/TilesList";
 import { MovieTile } from "../../common/tiles/MovieTile";
 import { Container } from "./../../common/Container";
 import { Header } from "./../../common/Header";
-import { useLocation } from "react-router-dom";
 import { StateChecker } from "../../common/StateChecker";
 
 export const PersonPage = () => {

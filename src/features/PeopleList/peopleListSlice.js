@@ -36,14 +36,15 @@ const peopleListSlice = createSlice({
   },
 });
 
-export const { fetchPeopleList, fetchPeopleListSuccess, fetchPeopleListError, resetStatePeopleList, toggleStatus } =
-  peopleListSlice.actions;
+export const { fetchPeopleList, fetchPeopleListSuccess, fetchPeopleListError, resetStatePeopleList, toggleStatus } = peopleListSlice.actions;
 
 export const selectPeopleList = (state) => state.peopleList.peopleList;
 export const selectError = (state) => state.peopleList.error;
 export const selectLoading = (state) => state.peopleList.loading;
+
 export const selectPeoplesByQuery = (state, query) => {
   const peopleList = selectPeopleList(state);
+
   if (!query || query.trim() === "") {
     return peopleList;
   }

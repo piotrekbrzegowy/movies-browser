@@ -1,6 +1,6 @@
+import { call, delay, put, takeLatest } from "redux-saga/effects";
 import { apiConnect } from "../../common/apiConnect";
 import { apiLink, apiKey, language } from "../../common/apiConfiguration";
-import { call, delay, put, takeLatest } from "redux-saga/effects";
 import { fetchPerson, fetchPersonCreditsSuccess, fetchPersonError, fetchPersonSuccess } from "./personSlice";
 
 function* PersonHandler({ payload: { id } }) {
@@ -16,9 +16,9 @@ function* PersonHandler({ payload: { id } }) {
     yield put(fetchPersonCreditsSuccess(personCredits));
   } catch (error) {
     yield put(fetchPersonError());
-  }
-}
+  };
+};
 
 export function* watchFetchPersonDetails() {
   yield takeLatest(fetchPerson.type, PersonHandler);
-}
+};

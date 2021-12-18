@@ -1,7 +1,7 @@
+import { call, put, takeLatest, delay } from "redux-saga/effects";
 import { apiConnect } from "../common/apiConnect";
 import { apiLink, apiKey, language } from "../common/apiConfiguration";
 import { fetchElement, fetchElementSuccess, fetchElementError, fetchElementCreditsSuccess } from "./elementSlice";
-import { call, put, takeLatest, delay } from "redux-saga/effects";
 
 function* fetchElementHandler({ payload: { id } }) {
 
@@ -17,9 +17,9 @@ function* fetchElementHandler({ payload: { id } }) {
         yield put(fetchElementCreditsSuccess(elementCreditsData));
     } catch (error) {
         yield put(fetchElementError());
-    }
-}
+    };
+};
 
 export function* watchFetchElement() {
     yield takeLatest(fetchElement.type, fetchElementHandler);
-}
+};

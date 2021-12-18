@@ -13,9 +13,9 @@ export const Wrapper = styled.div`
     align-items: center;
 
     @media(max-width: ${({ theme }) => theme.breakpoint.mediumScreenMax}){
-    margin: 0;
-    height: 44px;
-    width: 284px;
+        margin: 0;
+        height: 44px;
+        width: 284px;
     };
 `;
 
@@ -25,9 +25,9 @@ export const MagnifierImage = styled.img`
     height: 24px;
 
     @media(max-width: ${({ theme }) => theme.breakpoint.mediumScreenMax}){
-    width: 16px;
-    height: 16px;
-    margin: 0px 8px 0px 16px;
+        width: 16px;
+        height: 16px;
+        margin: 0px 8px 0px 16px;
     };
 `;
 
@@ -38,13 +38,13 @@ export const Input = styled.input`
     border: none;
 
     &:focus-visible {
-    outline: none;
+        outline: none;
     };
 
     @media(max-width: ${({ theme }) => theme.breakpoint.mediumScreenMax}){
-    font-weight: normal;
-    font-size: 13px;
-    line-height: 130%;
+        font-weight: normal;
+        font-size: 13px;
+        line-height: 130%;
     };
 
 `;

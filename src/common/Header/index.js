@@ -1,7 +1,7 @@
 import { Wrapper, StyledHeader, TitleWrapper, PageTitle, CamerPicture } from "./styled";
-import video from "../../assets/video.svg";
 import { Search } from "./Search";
 import { Navigation } from "./Navigation";
+import video from "../../assets/video.svg";
 
 export const Header = () => {
     return (

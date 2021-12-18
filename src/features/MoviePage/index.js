@@ -1,12 +1,12 @@
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 import { MovieSlider } from "./MovieSlider";
 import { MovieTileDetails } from "../../common/tiles/MovieTileDetails";
 import { Container } from "../../common/Container";
-import { useDispatch, useSelector } from "react-redux";
 import { fetchElement, resetState, selectElement, selectElementCredits, selectError, selectLoading } from "../elementSlice";
-import { useEffect } from "react";
 import { StateChecker } from "../../common/StateChecker";
 import { Header } from "../../common/Header";
-import { useLocation } from "react-router-dom";
 import { Subtitle } from "../../common/Subtitle";
 import { PersonTile } from "../../common/tiles/PersonTile";
 import { TilesList } from "../../common/TilesList";

@@ -15,9 +15,9 @@ function* fetchMovieListHandler({ payload: { page, query } }) {
     yield put(fetchMovieListSuccess(data));
   } catch (error) {
     yield put(fetchMovieListError());
-  }
-}
+  };
+};
 
 export function* watchFetchMovieList() {
   yield takeLatest(fetchMovieList.type, fetchMovieListHandler);
-}
+};

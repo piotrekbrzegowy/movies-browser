@@ -42,4 +42,5 @@ export const selectLoading = (state) => state.personDetails.loading;
 export const selectPersonState = (state) => state.personDetails;
 export const selectPerson = (state) => selectPersonState(state).person;
 export const selectPersonCredits = (state) => selectPersonState(state).credits;
+
 export default personSlice.reducer;

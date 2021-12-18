@@ -1,18 +1,18 @@
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 import { TilesList } from "../../common/TilesList";
 import { Pagination } from "./../../common/Pagination";
 import { MovieTile } from "../../common/tiles/MovieTile";
 import { Subtitle } from "../../common/Subtitle";
 import { fetchMovieList, selectMoviesByQuery, resetState, selectStatus, toggleStatus } from "./movieListSlice";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
 import { fetchCommon, selectError, selectLoading } from "../../common/commonSlice";
 import { StateChecker } from "../../common/StateChecker";
 import { startPage } from "../../common/startPage";
 import { useUrlParameter } from "../urlHooks";
 import { useQueryParameter } from "../../queryParameters";
 import { Header } from "../../common/Header";
-import SearchQueryParamName from "../../common/Header/Search/searchQueryParamName";
 import { Container } from "../../common/Container";
+import SearchQueryParamName from "../../common/Header/Search/searchQueryParamName";
 
 export function MovieList() {
   const dispatch = useDispatch();

@@ -1,17 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectPerson } from "../../../features/PersonPage/personSlice";
 import { getPosterUrl } from "../../apiConfiguration";
-import {
-  Container,
-  PersonPhoto,
-  Header,
-  PersonalData,
-  BirthInfo,
-  Wrapper,
-  BirthdayInfoDetail,
-  Biography,
-  NoImage,
-} from "./styled";
+import { Container, PersonPhoto, Header, PersonalData, BirthInfo, Wrapper, BirthdayInfoDetail, Biography, NoImage, } from "./styled";
 import emptyPoster from "../../../assets/emptyPoster.svg";
 
 export const PersonTileDetails = () => {
@@ -20,10 +10,10 @@ export const PersonTileDetails = () => {
   return (
     <Container>
       {profile_path ? (
-                    <PersonPhoto src={getPosterUrl(profile_path)} alt={`${name} poster`}/>
-                ) : (
-                    <NoImage src={emptyPoster} />
-                )}
+        <PersonPhoto src={getPosterUrl(profile_path)} alt={`${name} poster`} />
+      ) : (
+        <NoImage src={emptyPoster} />
+      )}
       <PersonalData>
         <Header>{name}</Header>
         <BirthInfo>

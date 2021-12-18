@@ -19,6 +19,7 @@ export const Pagination = () => {
       },
     ]);
   };
+
   return (
     <Wrapper>
       <Button disabled={page === 1} onClick={() => changeNumerPage(1)}>

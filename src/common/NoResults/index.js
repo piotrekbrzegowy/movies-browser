@@ -10,7 +10,6 @@ export const NoResults = ({ query }) => {
             <Wrapper>
                 <Picture src={noResult} />
             </Wrapper>
-
         </>
     );
 };
