@@ -12,7 +12,7 @@ import {
   Biography,
   NoImage,
 } from "./styled";
-import emptyMoviePoster from "./images/emptyMoviePoster.svg";
+import emptyPoster from "../../../assets/emptyPoster.svg";
 
 export const PersonTileDetails = () => {
   const { profile_path, name, birthday, place_of_birth, biography } = useSelector(selectPerson);
@@ -22,7 +22,7 @@ export const PersonTileDetails = () => {
       {profile_path ? (
                     <PersonPhoto src={getPosterUrl(profile_path)} alt={`${name} poster`}/>
                 ) : (
-                    <NoImage src={emptyMoviePoster} />
+                    <NoImage src={emptyPoster} />
                 )}
       <PersonalData>
         <Header>{name}</Header>

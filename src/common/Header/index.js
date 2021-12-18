@@ -1,5 +1,5 @@
 import { Wrapper, StyledHeader, TitleWrapper, PageTitle, CamerPicture } from "./styled";
-import video from "./icons/video.svg";
+import video from "../../assets/video.svg";
 import { Search } from "./Search";
 import { Navigation } from "./Navigation";
 

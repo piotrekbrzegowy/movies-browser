@@ -1,6 +1,6 @@
 import { Subtitle } from "../Subtitle";
 import { Picture, Wrapper } from "./styled";
-import noResult from"./pictures/noResult.svg";
+import noResult from "../../assets/noResult.svg";
 
 export const NoResults = ({ query }) => {
 

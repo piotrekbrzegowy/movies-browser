@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { ReactComponent as DangerIcon } from "./images/danger.svg";
+import { ReactComponent as DangerIcon } from "../../assets/danger.svg";
 
 export const ErrorPageContainer = styled.div`
   display: flex;

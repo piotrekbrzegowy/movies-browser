@@ -1,5 +1,5 @@
 import { RatingWrapper, Rate, Votes, StarIcon, RateSpan, RateDiv } from "./styled";
-import star from "./icons/star.svg";
+import star from "../../assets/star.svg";
 
 export function Rating({ rate, votes, moviePage, moviePageDetails }) {
     return (

@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { ReactComponent as LeftArrow } from "./../graphics/vectorLeft.svg";
+import { ReactComponent as LeftArrow } from "../../../assets/vectorLeft.svg";
 
 export const Arrow = styled(LeftArrow)`
   margin: 0 8px 0 0;

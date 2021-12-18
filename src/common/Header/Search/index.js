@@ -1,5 +1,5 @@
 import { Input, MagnifierImage, Wrapper } from "./styled";
-import search from "../icons/search.svg";
+import search from "../../../assets/search.svg";
 import { useQueryParameter, useReplaceQueryParameter } from "../../../queryParameters";
 import SearchQueryParamName from "./searchQueryParamName";
 

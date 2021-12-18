@@ -1,5 +1,5 @@
 import { Container, ContentPeopleTile, Picture, Subtitle, Title } from "./styled";
-import emptyPoster from "./svg/emptyPoster.svg"
+import emptyPoster from "../../../assets/emptyPoster.svg";
 
 
 export const PersonTile = ({ id, poster_path, title, character, job }) => {
