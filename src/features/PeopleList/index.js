@@ -6,7 +6,7 @@ import { fetchCommon, selectError, selectLoading } from "../../common/commonSlic
 import { Pagination } from "../../common/Pagination";
 import { StateChecker } from "../../common/StateChecker";
 import { Subtitle } from "../../common/Subtitle";
-import { PeopleTile } from "./PeopleTile";
+import { PersonTile } from "../../common/tiles/PersonTile";
 import { fetchPeopleList, resetStatePeopleList, selectPeoplesByQuery, selectStatus, toggleStatus } from "./peopleListSlice";
 import { Header } from "../../common/Header";
 import { useQueryParameter } from "../../queryParameters";
@@ -40,7 +40,7 @@ export const PeopleList = () => {
                 <Subtitle title={query ? `Search results for "${query}"` : "Popular people"} />
                     <PeopleTilesList>
                         {results.map(({ id, profile_path, name }) => (
-                            <PeopleTile
+                            <PersonTile
                                 key={id}
                                 id={id}
                                 poster_path={profile_path}

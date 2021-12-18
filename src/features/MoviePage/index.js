@@ -8,7 +8,7 @@ import { StateChecker } from "../../common/StateChecker";
 import { Header } from "../../common/Header";
 import { useLocation } from "react-router-dom";
 import { Subtitle } from "../../common/Subtitle";
-import { PeopleTile } from "../PeopleList/PeopleTile";
+import { PersonTile } from "../../common/tiles/PersonTile";
 import { TilesList } from "../../common/TilesList";
 
 export function MoviePage() {
@@ -52,7 +52,7 @@ export function MoviePage() {
                             <Subtitle title={`Cast`} />
                             <TilesList>
                                 {elementCreditsData.cast.map(({ id, profile_path, name, character }) => (
-                                    <PeopleTile
+                                    <PersonTile
                                         key={id}
                                         id={id}
                                         poster_path={profile_path}
@@ -68,7 +68,7 @@ export function MoviePage() {
                             <Subtitle title={`Crew`} />
                             <TilesList>
                                 {elementCreditsData.crew.map(({ id, profile_path, name, job }) => (
-                                    <PeopleTile
+                                    <PersonTile
                                         key={id}
                                         id={id}
                                         poster_path={profile_path}

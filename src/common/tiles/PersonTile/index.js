@@ -2,7 +2,7 @@ import { Container, ContentPeopleTile, Picture, Subtitle, Title } from "./styled
 import emptyPoster from "./svg/emptyPoster.svg"
 
 
-export const PeopleTile = ({ id, poster_path, title, character, job }) => {
+export const PersonTile = ({ id, poster_path, title, character, job }) => {
 
     return (
         <Container to={`/people/person/${id}`}>
