@@ -12,10 +12,15 @@ export const Search = () => {
     const title = hashString.includes("/people") ? peopleTitle : moviesTitle;
 
     const onInputChange = ({ target }) => {
-        replaceQueryParameter({
+        replaceQueryParameter([
+        {
             key: SearchQueryParamName,
-            value: target.value.trim() !== "" ? target.value : undefined,
-        });
+            value: target.value.trim() !== "" ? target.value : "",
+        },
+        {
+            key: "page",
+            value: 1,
+        }]);
     };
 
     return (
