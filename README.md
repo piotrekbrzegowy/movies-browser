@@ -1,10 +1,21 @@
-# Projekt grupowy : Movies Browser
+# &#127916; Group project : Movies Browser
 
-Przemek Przybalak
-Piotrek Brzegowy
-Dominik Blak
+# 👨‍💻 Authors :
 
-Demo : https://dominikblak.github.io/movies-browser/
+Przemek Przybalak : <a href="https://github.com/Przemek-Przybylak">GitHub</a>
+
+Piotrek Brzegowy : <a href="https://github.com/piotrekbrzegowy">GitHub</a>
+
+Dominik Blak : <a href="https://github.com/dominikblak">GitHub</a>
+
+## 🚀 Demo :
+
+<a href="https://dominikblak.github.io/movies-browser/">Demonstration</a>
+
+## 📖 Description :
+
+Application with the current database and search engine for movies and actors.
+In "Movies" section you will find information about movies such as: title, release date, genres, rating, number of votes, description of the movie.In the "people" section you will find information on actors such as: date and place of birth and their biography, and a list of productions in which the actor participated.The data comes from the TMDB API.
 
 # Getting Started with Create React App
 
