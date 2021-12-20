@@ -1,42 +1,47 @@
 import styled from "styled-components";
 
 export const Container = styled.article`
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto 1fr;
-    gap: 40px;
-    row-gap: 24px;
+    min-height: 644px;
     margin: 56px 0 54px 0;
     background-color: ${({ theme }) => theme.color.white};
     padding: 40px;
-    display: grid;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}) {
         margin: 18px;
         padding: 18px;
-        gap: 18px;
+        min-height: 600px;
     };
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
         margin: 16px;
         padding: 16px;
-        gap: 16px;
-        grid-template-columns: 116px 1fr;
-        grid-template-rows: auto 1fr;
+        min-height: 179px;
+    };
+`;
+
+export const Content = styled.span`
+
+    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
+        display: flex;
     };
 `;
 
 export const PersonPhoto = styled.img`
     display: block;
     height: 564px;
-    grid-row: 1 /-1;
-    grid-column: 1;
     border-radius: 5px;
     width: 399px;
+    float: left;
+    margin: 0 40px 20px 0;
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}) {
+        margin: 0 18px 0px 0;
+    };
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
         height: auto;
-        grid-row: 1;
         width: 116px;
+        margin: 0 16px 16px 0;
     };
 `;
 
@@ -130,11 +135,10 @@ export const BirthdayInfoDetail = styled.article`
     color: ${({ theme }) => theme.color.black};
 `;
 
-export const Biography = styled.span`
-    grid-row: 2 /-1;
-    grid-column: 2 / -1;
+export const Biography = styled.div`
     font-size: 20px;
     line-height: 160%;
+    margin: 24px 0 0 0;
     
     @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}) {
         font-size: 18px;
@@ -142,8 +146,8 @@ export const Biography = styled.span`
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
         line-height: 16.9px;
-        grid-column: 1 / -1;
         font-size: 13px;
+        margin: 0px;
     };
 `;
 
