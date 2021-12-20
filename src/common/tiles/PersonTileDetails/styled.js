@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.article`
-    
+    min-height: 644px;
     margin: 56px 0 54px 0;
     background-color: ${({ theme }) => theme.color.white};
     padding: 40px;
@@ -9,13 +9,13 @@ export const Container = styled.article`
     @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}) {
         margin: 18px;
         padding: 18px;
-        
+        min-height: 600px;
     };
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
         margin: 16px;
         padding: 16px;
-        
+        min-height: 179px;
     };
 `;
 
