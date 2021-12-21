@@ -17,6 +17,20 @@ Dominik Blak : <a href="https://github.com/dominikblak">GitHub</a>
 Application with the current database and search engine for movies and actors.
 In "Movies" section you will find information about movies such as: title, release date, genres, rating, number of votes, description of the movie.In the "people" section you will find information on actors such as: date and place of birth and their biography, and a list of productions in which the actor participated.The data comes from the TMDB API.
 
+### ℹ️ Instruction :
+
+- Browse the currently popular movies. You'll find a description of the film and its genre, country of production, release date, viewers' ratings, cast and crew.
+
+<img src="./public/Movies_Animation.gif" alt="demo_movies_section">
+
+- Browse currently popular actors. You will find here information about a given actor, such as: date of birth, short biography, list of films in which he participated as an actor or a co-creator.
+
+<img src="./public/People_Animation.gif" alt="demo_people_section">
+
+- Ability to search for movies and actors.
+
+<img src="./public/Search_Animation.gif" alt="demo_search_section">
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
