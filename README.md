@@ -1,10 +1,55 @@
-# Projekt grupowy : Movies Browser
+# &#127916; Group project : Movies Browser
 
-Przemek Przybalak
-Piotrek Brzegowy
-Dominik Blak
+# 👨‍💻 Authors :
 
-Demo : https://dominikblak.github.io/movies-browser/
+Przemek Przybylak : <a href="https://github.com/Przemek-Przybylak">GitHub</a>
+
+Piotrek Brzegowy : <a href="https://github.com/piotrekbrzegowy">GitHub</a>
+
+Dominik Blak : <a href="https://github.com/dominikblak">GitHub</a>
+
+## 📖 Description :
+
+Application with the current database and search engine for movies and actors.
+In "Movies" section you will find information about movies such as: title, release date, genres, rating, number of votes, description of the movie.In the "people" section you will find information on actors such as: date and place of birth and their biography, and a list of productions in which the actor participated.The data comes from the TMDB API.
+
+### 🚀 Demo :
+
+<a href="https://dominikblak.github.io/movies-browser/">Movies Browser</a>
+
+#### ℹ️ Instruction :
+
+- Browse the currently popular movies. You'll find a description of the film and its genre, country of production, release date, viewers' ratings, cast and crew.
+
+<img src="./public/Movies_Animation.gif" alt="demo_movies_section">
+
+- Browse currently popular actors. You will find here information about a given actor, such as: date of birth, short biography, list of films in which he participated as an actor or a co-creator.
+
+<img src="./public/People_Animation.gif" alt="demo_people_section">
+
+- Ability to search for movies and actors.
+
+<img src="./public/Search_Animation.gif" alt="demo_search_section">
+
+#### 🧰 Technology
+
+- HTML
+- CSS
+- React JS
+- Styled-components
+- Flex
+- Grid
+- Media queries
+- Creat-react-app
+- React - Redux
+- React - Toolkit
+- Redux Saga
+- Redux Router
+- Axios
+- Custom Hooks
+- GIT
+- githubPages
+- Scrum
 
 # Getting Started with Create React App
 
@@ -21,11 +66,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
