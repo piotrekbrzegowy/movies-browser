@@ -2,7 +2,7 @@
 
 # 👨‍💻 Authors :
 
-Przemek Przybalak : <a href="https://github.com/Przemek-Przybylak">GitHub</a>
+Przemek Przybylak : <a href="https://github.com/Przemek-Przybylak">GitHub</a>
 
 Piotrek Brzegowy : <a href="https://github.com/piotrekbrzegowy">GitHub</a>
 
