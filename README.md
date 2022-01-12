@@ -15,7 +15,7 @@ In "Movies" section you will find information about movies such as: title, relea
 
 ### 🚀 Demo :
 
-<a href="https://dominikblak.github.io/movies-browser/">Movies Browser</a>
+<a href="https://piotrekbrzegowy.github.io/movies-browser/">Movies Browser</a>
 
 #### ℹ️ Instruction :
 
@@ -33,23 +33,11 @@ In "Movies" section you will find information about movies such as: title, relea
 
 #### 🧰 Technology
 
-- HTML
-- CSS
-- React JS
-- Styled-components
-- Flex
-- Grid
-- Media queries
-- Creat-react-app
-- React - Redux
-- React - Toolkit
-- Redux Saga
-- Redux Router
-- Axios
-- Custom Hooks
-- GIT
-- githubPages
-- Scrum
+- HTML (semantics, accessibility)
+- CSS (Flexbox, Grid, RWD), BEM
+- JavaScript (ES6+, Promises, async/await), Storage API, Forms, Axios
+- React (Hooks), Styled Components
+- Redux, Redux-Saga, React Router
 
 # Getting Started with Create React App
 
