@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.js": "/movies-browser/static/js/main.f27750f8.chunk.js",
+    "main.js.map": "/movies-browser/static/js/main.f27750f8.chunk.js.map",
+    "runtime-main.js": "/movies-browser/static/js/runtime-main.5f0e7bd4.js",
+    "runtime-main.js.map": "/movies-browser/static/js/runtime-main.5f0e7bd4.js.map",
+    "static/js/2.d0b99f22.chunk.js": "/movies-browser/static/js/2.d0b99f22.chunk.js",
+    "static/js/2.d0b99f22.chunk.js.map": "/movies-browser/static/js/2.d0b99f22.chunk.js.map",
+    "static/js/3.d44be9cc.chunk.js": "/movies-browser/static/js/3.d44be9cc.chunk.js",
+    "static/js/3.d44be9cc.chunk.js.map": "/movies-browser/static/js/3.d44be9cc.chunk.js.map",
+    "index.html": "/movies-browser/index.html",
+    "static/js/2.d0b99f22.chunk.js.LICENSE.txt": "/movies-browser/static/js/2.d0b99f22.chunk.js.LICENSE.txt",
+    "static/media/danger.a514e9c6.svg": "/movies-browser/static/media/danger.a514e9c6.svg",
+    "static/media/emptyMoviePoster.4f22ec74.svg": "/movies-browser/static/media/emptyMoviePoster.4f22ec74.svg",
+    "static/media/emptyPoster.3f42dbe5.svg": "/movies-browser/static/media/emptyPoster.3f42dbe5.svg",
+    "static/media/noResult.d286a671.svg": "/movies-browser/static/media/noResult.d286a671.svg",
+    "static/media/search.b7af4217.svg": "/movies-browser/static/media/search.b7af4217.svg",
+    "static/media/spinner.c5f29646.svg": "/movies-browser/static/media/spinner.c5f29646.svg",
+    "static/media/star.8663155c.svg": "/movies-browser/static/media/star.8663155c.svg",
+    "static/media/vectorLeft.40e7e274.svg": "/movies-browser/static/media/vectorLeft.40e7e274.svg",
+    "static/media/vectorRight.9fdf3bd2.svg": "/movies-browser/static/media/vectorRight.9fdf3bd2.svg",
+    "static/media/video.094c01c4.svg": "/movies-browser/static/media/video.094c01c4.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5f0e7bd4.js",
+    "static/js/2.d0b99f22.chunk.js",
+    "static/js/main.f27750f8.chunk.js"
+  ]
+}
