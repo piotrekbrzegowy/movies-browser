@@ -7,7 +7,7 @@ export function Rating({ rate, votes, moviePage, moviePageDetails }) {
             <RatingWrapper moviePage={moviePage}>
                 {votes ?
                     <>
-                        <RateDiv moviePage={moviePage}><StarIcon moviePage={moviePage} src={star} />
+                        <RateDiv moviePage={moviePage}><StarIcon moviePage={moviePage} src={star} alt="Star icon"/>
                             <Rate moviePageDetails={moviePageDetails} moviePage={moviePage}>
                                 {rate}{moviePage && <RateSpan> / 10</RateSpan>}{moviePageDetails && <RateSpan moviePageDetails> / 10</RateSpan>}
                             </Rate>
