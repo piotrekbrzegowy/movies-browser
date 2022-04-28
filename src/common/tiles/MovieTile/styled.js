@@ -33,12 +33,11 @@ export const NoImage = styled.img`
 `;
 
 export const Image = styled.img`
-    max-width: 292px;
-    height: 434px;
+    width: 292px;
+    height: auto;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
-      max-width: 114px;
-      max-height: 169px;
+      width: 114px;
   };
 `;
 
